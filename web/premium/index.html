@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Amarella Studio CO. | Asistente de WhatsApp con IA</title>
-<meta name="description" content="Amarella Studio CO. crea asistentes de inteligencia artificial para WhatsApp: atención automática, gestión de citas y un panel para controlar tu negocio.">
+<title>Amarella Studio CO. | Plataforma para clínicas odontológicas</title>
+<meta name="description" content="Amarella Studio CO. es una plataforma tecnológica para clínicas odontológicas: atención inteligente por WhatsApp, panel administrativo y automatización de procesos.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -145,6 +145,18 @@ p{margin:0}
 .strip span{display:inline-flex;align-items:center;gap:10px}
 .strip svg{width:20px;height:20px;color:var(--ink)}
 
+/* retos */
+.pb{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.pbc{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px;box-shadow:var(--sh-1);display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .3s;min-width:0}
+.pbc:hover{transform:translateY(-4px);box-shadow:var(--sh-2);border-color:var(--ink)}
+.pbn{width:48px;height:48px;border-radius:14px;background:var(--y-tint);display:grid;place-items:center;margin-bottom:20px}
+.pbn svg{width:24px;height:24px}
+.pbc p{color:var(--mute);margin-top:10px;font-size:.95rem}
+.fix{margin-top:auto;padding-top:20px;display:grid;gap:8px;font-size:.88rem;font-weight:500;border-top:1px solid var(--line);margin-top:22px}
+.fix b{font-size:.66rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+.fix .st{justify-self:start;margin-top:4px}
+.channels{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+#problemas{padding-bottom:48px}
 /* servicios */
 .svc{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
 .card{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px;box-shadow:var(--sh-1);transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .3s;min-width:0;position:relative;display:flex;flex-direction:column}
@@ -339,6 +351,7 @@ footer nav a:hover{color:var(--ink)}
   .hero{padding-top:130px}.hero::before{display:none}
   .hero h1{max-width:18ch}
   .stage{min-height:490px;max-width:600px;width:100%;margin-inline:auto}
+  .pb{grid-template-columns:repeat(2,1fr)}
   .svc{grid-template-columns:repeat(2,1fr)}
   .c-a,.c-b,.c-c,.c-d,.c-e{grid-column:auto}
   .c-e{grid-column:1/-1}
@@ -383,6 +396,7 @@ footer nav a:hover{color:var(--ink)}
   .num{width:46px;height:46px;font-size:1.05rem;box-shadow:0 0 0 5px var(--y)}
   .step .sico{width:40px;height:40px;top:22px;right:18px}.step .sico svg{width:20px;height:20px}
   .steps::before{left:43px;top:46px;bottom:46px}
+  .pb{grid-template-columns:1fr}
   .svc{grid-template-columns:1fr}
   .c-a ul{grid-template-columns:1fr}
   .demo{grid-template-columns:1fr}
@@ -444,13 +458,13 @@ footer nav a:hover{color:var(--ink)}
       <span>Amarella<small>Studio CO.</small></span>
     </a>
     <nav class="menu" id="menu" aria-label="Principal">
-      <a href="#servicios">Servicios</a>
+      <a href="#problemas">Retos</a>
+      <a href="#servicios">Plataforma</a>
       <a href="#demo">Demostración</a>
       <a href="#proceso">Proceso</a>
       <a href="#panel">Panel</a>
       <a href="#planes">Planes</a>
-      <a href="#faq">Preguntas</a>
-      <a class="btn btn-y btn-sm" href="#contacto">Contactar</a>
+      <a class="btn btn-y btn-sm" href="#contacto" data-cta>Solicitar demo</a>
     </nav>
     <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span></button>
   </div>
@@ -461,23 +475,23 @@ footer nav a:hover{color:var(--ink)}
 <section class="hero" id="inicio">
   <div class="wrap">
     <div>
-      <span class="eyebrow rv">Asistentes de IA para WhatsApp</span>
-      <h1 class="rv" style="--d:.08s">Atiende a cada cliente por WhatsApp, <span class="hl">sin perder ninguno.</span></h1>
-      <p class="lead rv" style="--d:.16s">Amarella Studio CO. crea un asistente inteligente que responde por tu negocio, gestiona la conversación y te entrega un panel para controlarlo todo.</p>
+      <span class="eyebrow rv">Plataforma para clínicas odontológicas</span>
+      <h1 class="rv" style="--d:.08s">Atiende a cada paciente de tu clínica, <span class="hl">sin perder ninguno.</span></h1>
+      <p class="lead rv" style="--d:.16s">Amarella reúne en una sola plataforma la atención inteligente por WhatsApp, un panel para administrar tu clínica y la automatización de procesos.</p>
       <div class="actions rv" style="--d:.24s">
-        <a class="btn btn-y" href="#servicios">Conocer los servicios <svg><use href="#i-arrow"/></svg></a>
-        <a class="btn btn-o" href="#contacto">Contactar</a>
+        <a class="btn btn-y" href="#contacto" data-cta>Solicitar una demostración <svg><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-o" href="#servicios">Conocer la plataforma</a>
       </div>
       <div class="trust rv" style="--d:.32s">
         <span><i><svg><use href="#i-check"/></svg></i>Atención las 24 horas</span>
-        <span><i><svg><use href="#i-check"/></svg></i>Con tus servicios y precios</span>
+        <span><i><svg><use href="#i-check"/></svg></i>Con los servicios y precios de tu clínica</span>
         <span><i><svg><use href="#i-check"/></svg></i>Paso a un asesor humano</span>
       </div>
     </div>
 
     <div class="stage rv" style="--d:.2s" role="img" aria-label="Ejemplo de conversación de WhatsApp y panel de control, con datos de demostración">
       <div class="dash">
-        <div class="dh"><div><b>Tu cuenta</b><small>Negocio de ejemplo</small></div><span class="pill">IA activa</span></div>
+        <div class="dh"><div><b>Tu cuenta</b><small>Clínica Dental Ejemplo</small></div><span class="pill">IA activa</span></div>
         <div class="kpis">
           <div class="kpi"><small>Conversaciones</small><strong>128</strong></div>
           <div class="kpi"><small>Transferidas</small><strong>9</strong></div>
@@ -491,11 +505,11 @@ footer nav a:hover{color:var(--ink)}
       <div class="phone">
         <div class="phone-shell"><div class="wa">
             <div class="wa-status"><span>9:41</span><span aria-hidden="true">●●●</span></div>
-            <div class="wa-top"><svg><use href="#i-back"/></svg><span class="wa-av">N</span><div><b>Negocio de ejemplo</b><small>en línea · asistente activo</small></div></div>
+            <div class="wa-top"><svg><use href="#i-back"/></svg><span class="wa-av">N</span><div><b>Clínica Dental Ejemplo</b><small>en línea · asistente activo</small></div></div>
             <div class="wa-body">
               <span class="wa-chip">Hoy</span>
-              <div class="bub c">Hola, ¿tienen horario para el sábado?<time>10:02</time></div>
-              <div class="bub a">¡Hola! Sí, el sábado tenemos estos horarios disponibles:<div class="slots"><span>9:00</span><span class="on">11:30</span><span>14:00</span></div><time>10:02 <svg><use href="#i-ticks"/></svg></time></div>
+              <div class="bub c">Hola, quisiera una cita para limpieza dental. ¿Tienen horario el sábado?<time>10:02</time></div>
+              <div class="bub a">¡Hola! Con gusto. Estos son los horarios de ejemplo para el sábado:<div class="slots"><span>9:00</span><span class="on">11:30</span><span>14:00</span></div><time>10:02 <svg><use href="#i-ticks"/></svg></time></div>
               <div class="bub c">El de las 11:30, por favor.<time>10:03</time></div>
             </div>
             <div class="wa-input"><span>Mensaje</span><i><svg><use href="#i-send"/></svg></i></div>
@@ -510,27 +524,44 @@ footer nav a:hover{color:var(--ink)}
   <div class="wrap">
     <span><svg><use href="#i-chat"/></svg>Asistente de WhatsApp</span>
     <span><svg><use href="#i-cal"/></svg>Gestión de citas</span>
-    <span><svg><use href="#i-users"/></svg>Seguimiento de clientes</span>
-    <span><svg><use href="#i-dash"/></svg>Panel de administración</span>
+    <span><svg><use href="#i-users"/></svg>Seguimiento de pacientes</span>
+    <span><svg><use href="#i-dash"/></svg>Panel administrativo</span>
     <span><svg><use href="#i-bolt"/></svg>Automatización</span>
   </div>
 </div>
+
+<!-- PROBLEMAS -->
+<section id="problemas">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow rv">Retos de la clínica</span>
+      <h2 class="rv" style="--d:.06s">¿Te suena <span class="hl">familiar?</span></h2>
+      <p class="rv" style="--d:.12s">Son situaciones habituales en la atención de una clínica odontológica. Amarella está pensada para ayudarte con ellas.</p>
+    </div>
+    <div class="pb">
+      <article class="pbc rv"><span class="pbn"><svg><use href="#i-chat"/></svg></span><h3>Mensajes sin responder</h3><p>Los pacientes escriben fuera de horario o en plena consulta y nadie puede contestar a tiempo.</p><div class="fix"><b>Con Amarella</b>El asistente responde por WhatsApp a cualquier hora con la información de tu clínica.<span class="st st-on">Disponible</span></div></article>
+      <article class="pbc rv" style="--d:.08s"><span class="pbn"><svg><use href="#i-cal"/></svg></span><h3>Agenda difícil de coordinar</h3><p>Agendar, confirmar y reprogramar citas consume tiempo del equipo de recepción.</p><div class="fix"><b>Con Amarella</b>Gestión de citas desde la conversación.<span class="st st-dev">En desarrollo</span></div></article>
+      <article class="pbc rv" style="--d:.16s"><span class="pbn"><svg><use href="#i-users"/></svg></span><h3>Pacientes sin seguimiento</h3><p>Un contacto nuevo o un paciente que no regresa se pierde si nadie le da continuidad.</p><div class="fix"><b>Con Amarella</b>Seguimiento de contactos y continuidad de las conversaciones.<span class="st st-dev">En desarrollo</span></div></article>
+      <article class="pbc rv" style="--d:.24s"><span class="pbn"><svg><use href="#i-dash"/></svg></span><h3>Poca visibilidad de la atención</h3><p>Cuesta saber cuántas conversaciones llegan, qué plan tienes y cuánto has consumido.</p><div class="fix"><b>Con Amarella</b>Un panel con consumo de mensajes, estado de la IA y suscripción.<span class="st st-on">Disponible</span></div></article>
+    </div>
+  </div>
+</section>
 
 <!-- SERVICIOS -->
 <section id="servicios">
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow rv">Servicios</span>
-      <h2 class="rv" style="--d:.06s">Todo lo que tu negocio necesita para <span class="hl">atender mejor.</span></h2>
-      <p class="rv" style="--d:.12s">Un asistente que conoce tu negocio, un panel para controlarlo y procesos que se encargan de lo repetitivo.</p>
+      <h2 class="rv" style="--d:.06s">Una plataforma integral para tu <span class="hl">clínica odontológica.</span></h2>
+      <p class="rv" style="--d:.12s">No es solo un chatbot: Amarella integra la atención por WhatsApp, un panel administrativo y procesos que se encargan de lo repetitivo.</p>
     </div>
     <div class="legend rv"><span class="lg"><span class="st st-on">Disponible</span>Funciona hoy</span><span class="lg"><span class="st st-dev">En desarrollo</span>Aún no operativo</span></div>
     <div class="svc">
       <article class="card c-a rv">
         <div class="card-h"><div class="ico"><svg><use href="#i-chat"/></svg></div><span class="st st-on">Disponible</span></div>
-        <h3>Asistente inteligente de WhatsApp</h3>
-        <p>Responde a tus clientes de forma natural, a cualquier hora, con la información que tú configuras.</p>
-        <ul><li>Atención automática</li><li>Respuestas sobre servicios, precios y horarios</li><li>Atención de nuevos clientes</li><li>Transferencia a un asesor humano</li><li>Conversación natural</li></ul>
+        <h3>Atención inteligente por WhatsApp</h3>
+        <p>Responde a tus pacientes de forma natural, a cualquier hora, con la información que tú configuras.</p>
+        <ul><li>Atención automática</li><li>Respuestas sobre servicios, precios y horarios</li><li>Atención de nuevos pacientes</li><li>Transferencia a un asesor humano</li><li>Conversación natural</li></ul>
       </article>
       <article class="card c-b dev rv" style="--d:0.08s">
         <div class="card-h"><div class="ico"><svg><use href="#i-cal"/></svg></div><span class="st st-dev">En desarrollo</span></div>
@@ -540,21 +571,21 @@ footer nav a:hover{color:var(--ink)}
       </article>
       <article class="card c-c dev rv">
         <div class="card-h"><div class="ico"><svg><use href="#i-users"/></svg></div><span class="st st-dev">En desarrollo</span></div>
-        <h3>Seguimiento de clientes</h3>
+        <h3>Seguimiento de pacientes</h3>
         <p>Que ninguna conversación se quede a medias.</p>
-        <ul><li>Seguimiento de nuevos contactos</li><li>Recuperación de oportunidades</li><li>Continuidad de conversaciones</li><li>Atención a clientes existentes</li></ul>
+        <ul><li>Seguimiento de nuevos contactos</li><li>Recuperación de oportunidades</li><li>Continuidad de conversaciones</li><li>Atención a pacientes existentes</li></ul>
       </article>
       <article class="card c-d rv" style="--d:0.08s">
         <div class="card-h"><div class="ico"><svg><use href="#i-dash"/></svg></div><span class="st st-on">Disponible</span></div>
-        <h3>Panel de administración</h3>
-        <p>Una vista clara de tu cuenta y de lo que hace la IA.</p>
+        <h3>Panel administrativo</h3>
+        <p>Una vista clara de tu clínica, tu plan y lo que hace la IA.</p>
         <ul><li>Control de la cuenta y estadísticas</li><li>Consumo de mensajes</li><li>Estado de la inteligencia artificial</li><li>Servicios, precios y suscripción</li></ul>
       </article>
       <article class="card c-e dev rv" style="--d:0.16s">
         <div class="card-h"><div class="ico"><svg><use href="#i-bolt"/></svg></div><span class="st st-dev">En desarrollo</span></div>
         <h3>Automatización empresarial</h3>
         <p>Menos tareas manuales y una atención centralizada.</p>
-        <ul><li>Optimización de procesos</li><li>Reducción de tareas manuales</li><li>Centralización de la atención</li><li>Mejor organización del negocio</li></ul>
+        <ul><li>Optimización de procesos</li><li>Reducción de tareas manuales</li><li>Centralización de la atención</li><li>Mejor organización de la clínica</li></ul>
       </article>
     </div>
   </div>
@@ -574,30 +605,30 @@ footer nav a:hover{color:var(--ink)}
           <div class="mini">
           <div class="phone-shell"><div class="wa">
             <div class="wa-status"><span>9:41</span><span aria-hidden="true">●●●</span></div>
-            <div class="wa-top"><svg><use href="#i-back"/></svg><span class="wa-av">N</span><div><b>Negocio de ejemplo</b><small>en línea · asistente activo</small></div></div>
+            <div class="wa-top"><svg><use href="#i-back"/></svg><span class="wa-av">N</span><div><b>Clínica Dental Ejemplo</b><small>en línea · asistente activo</small></div></div>
             <div class="wa-body">
               <span class="wa-chip">Hoy</span>
-              <div class="bub c">Hola, quisiera saber qué servicios ofrecen y sus horarios.<time>09:14</time></div>
-              <div class="bub a">¡Bienvenido! Atendemos de lunes a sábado. Te comparto los servicios y sus precios. ¿Cuál te interesa?<time>09:14 <svg><use href="#i-ticks"/></svg></time></div>
-              <div class="bub c">El servicio 2.<time>09:15</time></div>
-              <div class="bub a">Perfecto. Si prefieres hablar con una persona, te paso con un asesor.<time>09:15 <svg><use href="#i-ticks"/></svg></time></div>
+              <div class="bub c">Hola, ¿qué tratamientos ofrecen y cuál es su horario?<time>09:14</time></div>
+              <div class="bub a">¡Bienvenido a la clínica! Te comparto los servicios y horarios configurados. ¿Sobre cuál quieres saber más?<time>09:14 <svg><use href="#i-ticks"/></svg></time></div>
+              <div class="bub c">Una limpieza dental.<time>09:15</time></div>
+              <div class="bub a">Con gusto. Si prefieres hablar con una persona, te paso con un asesor de la clínica.<time>09:15 <svg><use href="#i-ticks"/></svg></time></div>
             </div>
             <div class="wa-input"><span>Mensaje</span><i><svg><use href="#i-send"/></svg></i></div>
           </div></div>
           </div>
         </div>
-        <figcaption><b>El asistente responde</b><span>Información del negocio, en tono natural y con paso a un asesor.</span></figcaption>
+        <figcaption><b>El asistente responde</b><span>Información de la clínica, en tono natural y con paso a un asesor.</span></figcaption>
       </figure>
       <figure class="rv" style="--d:.1s">
         <div class="frame"><span class="demo-badge">Demostración</span>
           <div class="appt">
-            <div class="ap-h"><span class="wa-av">NE</span><div><b>Nombre de ejemplo</b><small>Solicitud por WhatsApp</small></div></div>
+            <div class="ap-h"><span class="wa-av">PE</span><div><b>Paciente de ejemplo</b><small>Solicitud por WhatsApp</small></div></div>
             <div class="ap-lbl">Día</div>
             <div class="days"><span>Lun<b>9</b></span><span>Mar<b>10</b></span><span>Mié<b>11</b></span><span>Jue<b>12</b></span><span>Vie<b>13</b></span><span class="on">Sáb<b>14</b></span></div>
             <div class="ap-lbl">Horario</div>
             <div class="ap-slots"><span>9:00</span><span class="on">11:30</span><span>14:00</span></div>
-            <div class="ap-rows"><div><span>Servicio</span><b>Servicio de ejemplo</b></div><div><span>Canal</span><b>WhatsApp</b></div></div>
-            <div class="ok"><svg><use href="#i-check"/></svg>Cita confirmada al cliente</div>
+            <div class="ap-rows"><div><span>Servicio</span><b>Limpieza dental</b></div><div><span>Canal</span><b>WhatsApp</b></div></div>
+            <div class="ok"><svg><use href="#i-check"/></svg>Cita confirmada al paciente</div>
           </div>
         </div>
         <figcaption><b>Una solicitud de agendamiento</b><span>Representación del flujo previsto para la gestión de citas.</span></figcaption>
@@ -615,7 +646,7 @@ footer nav a:hover{color:var(--ink)}
             <div class="bars" style="height:86px;margin-top:14px" aria-hidden="true"><div><i style="height:30px"></i></div><div><i style="height:44px"></i></div><div><i class="h" style="height:62px"></i></div><div><i style="height:40px"></i></div><div><i style="height:52px"></i></div><div><i class="h" style="height:72px"></i></div></div>
           </div>
         </div>
-        <figcaption><b>Consumo y estado de la IA</b><span>Mensajes del mes, plan contratado y estado del asistente.</span></figcaption>
+        <figcaption><b>Consumo y estado de la IA</b><span>Mensajes del mes, plan contratado y estado del asistente de tu clínica.</span></figcaption>
       </figure>
     </div>
     <p class="demo-note rv">Todas las pantallas muestran información de demostración. No son clientes reales ni resultados.</p>
@@ -627,11 +658,11 @@ footer nav a:hover{color:var(--ink)}
   <div class="wrap">
     <div class="sec-head center">
       <span class="eyebrow rv">Cómo funciona</span>
-      <h2 class="rv" style="--d:.06s">De tu negocio a tu asistente, <span class="hl">en tres pasos.</span></h2>
+      <h2 class="rv" style="--d:.06s">De tu clínica a tu asistente, <span class="hl">en tres pasos.</span></h2>
     </div>
     <div class="steps">
-      <div class="step rv"><div class="step-top"><div class="num">1</div><div class="line"></div></div><div class="sico"><svg><use href="#i-plug"/></svg></div><h3>Conectamos tu negocio</h3><p>Vinculamos tu canal de WhatsApp y registramos tu negocio con su propia cuenta y sus propios datos.</p><span class="tagline">Conexión</span></div>
-      <div class="step rv" style="--d:.1s"><div class="step-top"><div class="num">2</div><div class="line"></div></div><div class="sico"><svg><use href="#i-sliders"/></svg></div><h3>Configuramos tu asistente inteligente</h3><p>Definimos nombre, tono, servicios, precios, horarios e instrucciones para que responda como tu equipo.</p><span class="tagline">Configuración</span></div>
+      <div class="step rv"><div class="step-top"><div class="num">1</div><div class="line"></div></div><div class="sico"><svg><use href="#i-plug"/></svg></div><h3>Conectamos tu clínica</h3><p>Vinculamos tu canal de WhatsApp y registramos tu clínica con su propia cuenta y sus propios datos.</p><span class="tagline">Conexión</span></div>
+      <div class="step rv" style="--d:.1s"><div class="step-top"><div class="num">2</div><div class="line"></div></div><div class="sico"><svg><use href="#i-sliders"/></svg></div><h3>Configuramos tu asistente inteligente</h3><p>Definimos nombre, tono, tratamientos, precios, horarios e instrucciones para que responda como tu equipo.</p><span class="tagline">Configuración</span></div>
       <div class="step rv" style="--d:.2s"><div class="step-top"><div class="num">3</div></div><div class="sico"><svg><use href="#i-chat"/></svg></div><h3>Amarella gestiona la atención</h3><p>El asistente atiende las conversaciones y los procesos habilitados, y tú lo supervisas desde tu panel.</p><span class="tagline">En marcha</span></div>
     </div>
   </div>
@@ -643,12 +674,12 @@ footer nav a:hover{color:var(--ink)}
     <div>
       <span class="eyebrow rv">Panel de clientes</span>
       <h2 class="rv" style="margin:16px 0 18px;--d:.06s">Tu cuenta, <span class="hl">siempre bajo control.</span></h2>
-      <p class="lead rv" style="--d:.12s">Cada negocio entra a su propio panel y ve únicamente su información.</p>
+      <p class="lead rv" style="--d:.12s">Cada clínica entra a su propio panel y ve únicamente su información.</p>
       <ul class="feat">
         <li class="rv"><span class="ico"><svg><use href="#i-card"/></svg></span><div><b>Plan contratado</b><span>Estado, inicio y vencimiento de tu suscripción.</span></div></li>
         <li class="rv"><span class="ico"><svg><use href="#i-chart"/></svg></span><div><b>Mensajes consumidos y disponibles</b><span>Sigue el consumo del mes y los avisos de límite.</span></div></li>
         <li class="rv"><span class="ico"><svg><use href="#i-bolt"/></svg></span><div><b>Estado de la IA</b><span>Actívala o desactívala cuando lo necesites.</span></div></li>
-        <li class="rv"><span class="ico"><svg><use href="#i-gear"/></svg></span><div><b>Servicios y gestión de la cuenta</b><span>Edita tus servicios, precios y datos del negocio.</span></div></li>
+        <li class="rv"><span class="ico"><svg><use href="#i-gear"/></svg></span><div><b>Servicios y gestión de la cuenta</b><span>Edita tus servicios, precios y datos de la clínica.</span></div></li>
       </ul>
     </div>
     <div class="rv" style="--d:.15s">
@@ -690,29 +721,29 @@ footer nav a:hover{color:var(--ink)}
   <div class="wrap">
     <div class="sec-head center">
       <span class="eyebrow rv">Planes</span>
-      <h2 class="rv" style="--d:.06s">Un plan para cada <span class="hl">etapa de tu negocio.</span></h2>
-      <p class="rv" style="--d:.12s">Cada plan incluye un límite mensual de mensajes. Los precios se acuerdan según tu caso.</p>
+      <h2 class="rv" style="--d:.06s">Un plan para cada <span class="hl">etapa de tu clínica.</span></h2>
+      <p class="rv" style="--d:.12s">Cada plan incluye un límite mensual de mensajes. Los precios se acuerdan según tu clínica.</p>
     </div>
     <div class="plans">
       <article class="plan rv">
         <div class="plan-h"><h3>Básico</h3></div>
-        <p class="desc">Para negocios que empiezan a automatizar su atención.</p>
-        <div class="price">A consultar</div><div class="price-n">Precio según tu negocio</div>
+        <p class="desc">Para clínicas que empiezan a automatizar su atención.</p>
+        <div class="price">A consultar</div><div class="price-n">Precio según tu clínica</div>
         <div class="incl">Incluye</div>
         <ul><li><svg><use href="#i-check"/></svg>Asistente de WhatsApp</li><li><svg><use href="#i-check"/></svg>Panel de cliente</li><li><svg><use href="#i-check"/></svg>Límite mensual de mensajes</li></ul>
         <a class="btn btn-o" href="#contacto">Consultar plan</a>
       </article>
       <article class="plan rec rv" style="--d:0.1s">
         <div class="plan-h"><h3>Profesional</h3><span class="badge">Recomendado</span></div>
-        <p class="desc">Para negocios con mayor volumen de conversaciones.</p>
-        <div class="price">A consultar</div><div class="price-n">Precio según tu negocio</div>
+        <p class="desc">Para clínicas con mayor volumen de conversaciones.</p>
+        <div class="price">A consultar</div><div class="price-n">Precio según tu clínica</div>
         <div class="incl">Incluye</div>
         <ul><li><svg><use href="#i-check"/></svg>Todo lo del plan Básico</li><li><svg><use href="#i-check"/></svg>Más mensajes al mes</li><li><svg><use href="#i-check"/></svg>Avisos por correo y WhatsApp</li></ul>
-        <a class="btn btn-k" href="#contacto">Solicitar demo <svg><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-k" href="#contacto" data-cta>Solicitar demostración <svg><use href="#i-arrow"/></svg></a>
       </article>
       <article class="plan rv" style="--d:0.2s">
         <div class="plan-h"><h3>A medida</h3></div>
-        <p class="desc">Para varias sedes o necesidades especiales.</p>
+        <p class="desc">Para clínicas con varias sedes o necesidades especiales.</p>
         <div class="price">A consultar</div><div class="price-n">Condiciones acordadas contigo</div>
         <div class="incl">Incluye</div>
         <ul><li><svg><use href="#i-check"/></svg>Configuración personalizada</li><li><svg><use href="#i-check"/></svg>Acompañamiento directo</li><li><svg><use href="#i-check"/></svg>Límites acordados contigo</li></ul>
@@ -731,13 +762,13 @@ footer nav a:hover{color:var(--ink)}
       <h2 class="rv" style="--d:.06s">Resolvemos tus <span class="hl">dudas.</span></h2>
     </div>
     <div class="faq rv" id="faqList">
-      <div class="qa open"><button aria-expanded="true"><span>¿Cómo funciona el asistente?</span><i class="pm"></i></button><div class="body"><div><p>Recibe los mensajes de tus clientes por WhatsApp y responde con la información de tu negocio: servicios, precios y horarios. Cuando hace falta, pasa la conversación a una persona de tu equipo.</p></div></div></div>
+      <div class="qa open"><button aria-expanded="true"><span>¿Cómo funciona el asistente?</span><i class="pm"></i></button><div class="body"><div><p>Recibe los mensajes de tus pacientes por WhatsApp y responde con la información de tu clínica: servicios, precios y horarios. Cuando hace falta, pasa la conversación a una persona de tu equipo.</p></div></div></div>
       <div class="qa"><button aria-expanded="false"><span>¿Cómo se conecta mi WhatsApp?</span><i class="pm"></i></button><div class="body"><div><p>Nos encargamos de la conexión durante la configuración inicial. Te indicaremos qué necesitamos de tu parte al contactarnos.</p></div></div></div>
       <div class="qa"><button aria-expanded="false"><span>¿Puede agendar citas?</span><i class="pm"></i></button><div class="body"><div><p>La gestión de citas está en desarrollo. Escríbenos y te contamos el estado actual y qué parte puedes usar hoy.</p></div></div></div>
-      <div class="qa"><button aria-expanded="false"><span>¿Qué incluyen los planes?</span><i class="pm"></i></button><div class="body"><div><p>Cada plan tiene un límite mensual de mensajes y acceso a tu panel. Los precios y condiciones se acuerdan según tu negocio.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false"><span>¿Qué incluyen los planes?</span><i class="pm"></i></button><div class="body"><div><p>Cada plan tiene un límite mensual de mensajes y acceso a tu panel. Los precios y condiciones se acuerdan según tu clínica.</p></div></div></div>
       <div class="qa"><button aria-expanded="false"><span>¿Qué pasa si llego al límite de mensajes o vence mi plan?</span><i class="pm"></i></button><div class="body"><div><p>Recibes avisos antes de que ocurra, por correo y por WhatsApp, para que puedas renovar a tiempo.</p></div></div></div>
-      <div class="qa"><button aria-expanded="false"><span>¿Puedo cambiar mis servicios, precios o apagar la IA?</span><i class="pm"></i></button><div class="body"><div><p>Sí. Desde tu panel puedes editar servicios, precios y horarios, y activar o desactivar el asistente cuando quieras.</p></div></div></div>
-      <div class="qa"><button aria-expanded="false"><span>¿Se mezclan los datos entre negocios?</span><i class="pm"></i></button><div class="body"><div><p>No. Cada negocio tiene su propia cuenta, configuración y conversaciones, separadas de las demás.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false"><span>¿Puedo cambiar mis servicios, precios o apagar la IA?</span><i class="pm"></i></button><div class="body"><div><p>Sí. Desde tu panel puedes editar servicios, precios y horarios de tu clínica, y activar o desactivar el asistente cuando quieras.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false"><span>¿Se mezclan los datos entre clínicas?</span><i class="pm"></i></button><div class="body"><div><p>No. Cada clínica tiene su propia cuenta, configuración y conversaciones, separadas de las demás.</p></div></div></div>
       <div class="qa"><button aria-expanded="false"><span>¿Qué soporte recibo?</span><i class="pm"></i></button><div class="body"><div><p>Te acompañamos en la configuración y en el uso del panel. Los canales y horarios de soporte se confirmarán al contratar.</p></div></div></div>
     </div>
   </div>
@@ -746,23 +777,23 @@ footer nav a:hover{color:var(--ink)}
 <!-- CONTACTO -->
 <section class="contact" id="contacto">
   <div class="wrap">
-    <span class="eyebrow">Empecemos</span>
-    <h2>Pon a tu negocio a <em>atender</em> mientras tú te enfocas en crecer.</h2>
-    <p>Cuéntanos cómo trabaja tu negocio y te mostramos cómo sería tu asistente de Amarella.</p>
+    <span class="eyebrow">Demostración</span>
+    <h2>Descubre cómo sería Amarella <em>en tu clínica.</em></h2>
+    <p>Cuéntanos cómo trabaja tu clínica y te mostramos la plataforma en una demostración.</p>
     <div class="actions">
-      <a class="btn btn-k" href="#contacto">Solicitar una demo <svg><use href="#i-arrow"/></svg></a>
+      <a class="btn btn-k" href="#contacto" data-cta="main">Solicitar una demostración <svg><use href="#i-arrow"/></svg></a>
       <a class="btn btn-o" href="#planes">Ver los planes</a>
     </div>
     <!-- PENDIENTE: añadir aquí WhatsApp y correo reales de Amarella Studio CO. -->
-    <div class="pending">Canales de contacto: pendientes de añadir</div>
+    <div class="pending" id="pending">Canales de contacto: pendientes de añadir</div>
   </div>
 </section>
 </main>
 
 <footer>
   <div class="wrap">
-    <span>&copy; <span id="year">2026</span> Amarella Studio CO. Todos los derechos reservados.</span>
-    <nav aria-label="Pie"><a href="#servicios">Servicios</a><a href="#planes">Planes</a><a href="#faq">Preguntas</a><a href="#contacto">Contacto</a></nav>
+    <span>&copy; <span id="year">2026</span> Amarella Studio CO. · Plataforma para clínicas odontológicas.</span>
+    <nav aria-label="Pie"><a href="#servicios">Plataforma</a><a href="#planes">Planes</a><a href="#faq">Preguntas</a><a href="#contacto">Contacto</a></nav>
   </div>
 </footer>
 
@@ -772,6 +803,18 @@ footer nav a:hover{color:var(--ink)}
   var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(!reduce) root.classList.add('js');
   d.getElementById('year').textContent=new Date().getFullYear();
+
+  /* Canales de contacto reales: completar cuando existan. Mientras estén vacíos, los botones llevan a la sección de contacto. */
+  var CONTACT={whatsapp:'',email:''};
+  (function(){
+    var wa=(CONTACT.whatsapp||'').replace(/\D/g,''), mail=(CONTACT.email||'').trim();
+    var msg='Hola, quisiera solicitar una demostración de Amarella para mi clínica odontológica.';
+    var href=wa?('https://wa.me/'+wa+'?text='+encodeURIComponent(msg)):(mail?('mailto:'+mail+'?subject='+encodeURIComponent('Solicitud de demostración')+'&body='+encodeURIComponent(msg)):'');
+    if(!href) return;
+    d.querySelectorAll('[data-cta]').forEach(function(a){a.setAttribute('href',href);if(href.indexOf('http')===0){a.target='_blank';a.rel='noopener'}});
+    var p=d.getElementById('pending'); if(p){ var t=[]; if(wa)t.push('WhatsApp: +'+wa); if(mail)t.push('Correo: '+mail); p.textContent=t.join('  ·  '); p.style.borderStyle='solid'; }
+  })();
+
 
   var nav=d.getElementById('nav');
   function onScroll(){nav.classList.toggle('scrolled',window.scrollY>8)}
