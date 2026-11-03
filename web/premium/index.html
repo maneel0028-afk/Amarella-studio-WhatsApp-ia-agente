@@ -165,7 +165,7 @@ p{margin:0}
 .pill{display:inline-flex;align-items:center;gap:7px;padding:5px 11px;border-radius:999px;background:var(--k);color:var(--y);font-size:.68rem;font-weight:800;white-space:nowrap}
 .pill::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--y);animation:pulse 2.4s infinite}
 .bar{height:9px;border-radius:99px;background:var(--y-tint);overflow:hidden}
-.bar i{display:block;height:100%;width:62%;background:var(--y);border-radius:99px}
+.bar i{display:block;height:100%;width:65%;background:var(--y);border-radius:99px}
 .l{display:flex;justify-content:space-between;gap:10px;font-size:.74rem;font-weight:600;color:var(--mute);margin-bottom:8px}
 .l b{color:var(--ink)}
 
@@ -269,7 +269,7 @@ p{margin:0}
 .ring{position:relative;width:104px;height:104px;flex:none}
 .ring svg{width:100%;height:100%;transform:rotate(-90deg)}
 .ring .tr{fill:none;stroke:var(--y-tint);stroke-width:11}
-.ring .pg{fill:none;stroke:var(--y);stroke-width:11;stroke-linecap:round;stroke-dasharray:164 264}
+.ring .pg{fill:none;stroke:var(--y);stroke-width:11;stroke-linecap:round;stroke-dasharray:172 264}
 .ring div{position:absolute;inset:0;display:grid;place-content:center;text-align:center;line-height:1.1}
 .ring strong{font-size:1.45rem;letter-spacing:-.04em}.ring small{font-size:.58rem;color:var(--soft);font-weight:700}
 .gl{display:grid;gap:10px;font-size:.74rem;color:var(--mute);font-weight:600;min-width:0}
@@ -336,11 +336,6 @@ tr:last-child td{border-bottom:0}
 .plan-h{display:flex;justify-content:space-between;align-items:center;gap:10px;min-height:32px}
 .plan h3{font-size:1.35rem}
 .plan .desc{color:var(--mute);margin-top:8px;font-size:.95rem}
-.price{margin:26px 0 4px;font-size:2rem;font-weight:800;letter-spacing:-.04em;line-height:1.1}
-.price-n{font-size:.82rem;color:var(--soft);font-weight:600}
-.limit{margin:22px 0 0;padding:14px 16px;border-radius:12px;background:var(--paper);display:flex;justify-content:space-between;gap:12px;font-size:.84rem;font-weight:700;align-items:center}
-.limit span:first-child{white-space:nowrap}
-.limit span:last-child{color:var(--mute);font-weight:600;text-align:right}
 .incl{font-size:.64rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);padding-top:24px;margin-bottom:14px}
 .plan ul{list-style:none;margin:0 0 30px;padding:0;display:grid;gap:13px;font-size:.93rem;font-weight:500}
 .plan li{display:flex;gap:11px;align-items:flex-start}
@@ -348,9 +343,6 @@ tr:last-child td{border-bottom:0}
 .plan li .st{margin-left:auto;font-size:.56rem;padding:3px 8px}
 .plan .btn{margin-top:auto;width:100%}
 .plan.prem{background:var(--k);color:var(--white);border-color:var(--k);box-shadow:0 40px 70px -34px rgba(0,0,0,.7)}
-.plan.prem .desc,.plan.prem .price-n{color:var(--mute-d)}
-.plan.prem .price{color:var(--y)}
-.plan.prem .limit{background:var(--k3)}.plan.prem .limit span:last-child{color:var(--mute-d)}
 .plan.prem .incl{color:var(--soft-d)}
 .plan.prem .st-dev{background:transparent;color:var(--mute-d);border-color:rgba(255,255,255,.3)}
 .badge{background:var(--y);color:var(--k);font-size:.64rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:999px;white-space:nowrap}
@@ -364,6 +356,50 @@ tr:last-child td{border-bottom:0}
 .cmp .y svg{width:12px;height:12px}
 .plans-note{margin-top:26px;text-align:center;color:var(--soft);font-size:.86rem;font-weight:600}
 
+/* por qué */
+.why{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:20px;align-items:stretch;max-width:1080px;margin:0 auto}
+.why-l{display:grid;gap:14px}
+.why-l .wc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px 24px;align-items:start;padding:22px 24px}
+.why-l .wc .wk,.why-l .wc h3,.why-l .wc>p{grid-column:1}
+.why-l .wc .wn{grid-column:2;grid-row:1/span 3;margin:0;padding:0 0 0 22px;border-top:0;border-left:1px solid var(--line);align-self:stretch}
+.wc{border:1px solid var(--line);border-radius:var(--r-lg);padding:26px;background:var(--white);display:flex;flex-direction:column;gap:10px;min-width:0}
+.wc .wk{font-size:.64rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+.wc h3{font-size:1.06rem}
+.wc p{color:var(--mute);font-size:.9rem}
+.wn{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-size:.86rem;color:var(--mute)}
+.wn b{display:block;font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);margin-bottom:4px}
+.wc.am{background:var(--k);color:var(--white);border-color:var(--k);box-shadow:0 30px 60px -30px rgba(0,0,0,.6);padding:28px}
+.wc.am .wk{color:var(--y)}.wc.am h3{font-size:1.2rem}.wc.am p{color:var(--mute-d)}
+.wc.am ul{list-style:none;margin:8px 0 0;padding:14px 0 0;border-top:1px solid var(--line-d);display:grid;gap:9px;font-size:.86rem;font-weight:600}
+.wc.am li{display:flex;gap:10px;align-items:flex-start}
+.wc.am li::before{content:"";flex:none;width:16px;height:16px;border-radius:50%;margin-top:2px;background:var(--y) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3.2 3.2L15 6.8' fill='none' stroke='%230B0B0B' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/11px no-repeat}
+.why-note{margin-top:24px;text-align:center;font-size:.82rem;color:var(--soft);font-weight:600}
+/* gancho */
+.hook-s{padding-block:0 104px}
+.hook{background:var(--k);color:var(--white);border-radius:28px;padding:48px 52px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:36px;align-items:center;position:relative;overflow:hidden}
+.hook::after{content:"";position:absolute;right:-90px;bottom:-140px;width:320px;height:320px;border-radius:50%;border:1.5px solid rgba(255,196,0,.22)}
+.hook h2{font-size:clamp(1.55rem,2.8vw,2.15rem);margin:14px 0 12px;max-width:26ch}
+.hook p{color:var(--mute-d);max-width:56ch}
+.hook .btn{position:relative;z-index:1}
+/* precios */
+.pz{display:flex;align-items:flex-start;gap:6px;margin:26px 0 0;line-height:1}
+.pz .cur{font-size:1.5rem;font-weight:800;margin-top:6px}
+.pz .amt{font-size:clamp(2.8rem,5vw,3.6rem);font-weight:800;letter-spacing:-.045em}
+.pz .per{font-size:.74rem;font-weight:700;color:var(--soft);margin:8px 0 0 6px;line-height:1.3}
+.plan.prem .pz{color:var(--y)}.plan.prem .pz .per{color:var(--soft-d)}
+.msgs{margin-top:22px;padding:14px 16px;border-radius:14px;background:var(--y-tint);border:1px solid var(--y-line);display:flex;align-items:center;gap:12px;font-size:.95rem;font-weight:600}
+.msgs svg{width:22px;height:22px;flex:none}
+.msgs b{font-size:1.25rem;font-weight:800;letter-spacing:-.02em;margin-right:2px}
+.plan.prem .msgs{background:var(--k3);border-color:rgba(255,196,0,.35);color:var(--white)}
+.plan.prem .msgs svg{color:var(--y)}.plan.prem .msgs b{color:var(--y)}
+.cond{font-size:.8rem;color:var(--soft);font-weight:600;margin:0 0 18px;padding-top:16px;border-top:1px solid var(--line)}
+.plan.prem .cond{color:var(--soft-d);border-color:var(--line-d)}
+.plan .incl{border-top:1px solid var(--line);margin-top:26px}
+.plan.prem .incl{border-color:var(--line-d)}
+.plan ul{margin-bottom:22px}
+.plan.prem .desc{color:var(--mute-d)}
+.cmp tr.hlr td{background:var(--off);font-size:.86rem}
+.cmp tr.hlr td:first-child{font-weight:700}
 /* faq */
 .faq{max-width:840px;margin:0 auto;background:var(--white);border:1px solid var(--line);border-radius:22px;box-shadow:var(--sh-1);overflow:hidden}
 .qa{border-bottom:1px solid var(--line);position:relative;transition:background .3s}
@@ -463,6 +499,9 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
   .sico{top:26px;right:22px}
   .step h3{padding-right:56px}
   .sc{grid-template-columns:minmax(0,1fr);max-width:620px;margin-inline:auto}
+  .why{grid-template-columns:minmax(0,1fr);max-width:640px}
+  .wc.am ul{grid-template-columns:1fr 1fr;column-gap:24px}
+  .hook{grid-template-columns:minmax(0,1fr);padding:40px}
 }
 @media(max-width:900px){
   .burger{display:grid}
@@ -511,6 +550,12 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
   .steps::before{left:43px;top:46px;bottom:46px}
   .sico{width:40px;height:40px;top:22px;right:18px}.sico svg{width:20px;height:20px}
   .plan{padding:30px 24px}
+  .why-l .wc{grid-template-columns:minmax(0,1fr)}
+  .why-l .wc .wn{grid-column:1;grid-row:auto;padding:12px 0 0;border-left:0;border-top:1px solid var(--line);margin-top:6px}
+  .wc.am ul{grid-template-columns:minmax(0,1fr)}
+  .hook-s{padding-block:0 64px}
+  .hook{padding:30px 22px;border-radius:22px}
+  .hook .btn{width:100%}
   .cmp{padding:6px 16px 12px}
   .qa button{padding:18px 20px;font-size:.97rem;gap:14px}.qa .body p{padding:0 20px 22px}
   .contact{padding-block:80px}
@@ -560,7 +605,7 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
     </a>
     <nav class="menu" id="menu" aria-label="Principal">
       <a href="#servicios">Plataforma</a>
-      <a href="#demo">Demostración</a>
+      <a href="#por-que">Por qué Amarella</a>
       <a href="#panel">Panel</a>
       <a href="#planes">Planes</a>
       <a href="#faq">Preguntas</a>
@@ -610,7 +655,7 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
       </div>
       <div class="mini-dash">
         <div class="dh"><div><b>Tu clínica</b><small>Panel de ejemplo</small></div><span class="pill">IA activa</span></div>
-        <div class="l"><span>Mensajes del mes</span><b>620 / 1.000</b></div>
+        <div class="l"><span>Mensajes del mes</span><b>520 / 800</b></div>
         <div class="bar"><i></i></div>
       </div>
     </div>
@@ -705,8 +750,39 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
   </div>
 </section>
 
+<!-- POR QUÉ AMARELLA -->
+<section id="por-que" class="white">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow rv">Por qué Amarella</span>
+      <h2 class="rv" style="--d:.06s">No necesitas otro chatbot. <span class="hl">Necesitas una plataforma para tu clínica.</span></h2>
+      <p class="rv" style="--d:.12s">Cada forma de atender tiene su lugar. Esta es la diferencia de enfoque entre las opciones más comunes y Amarella.</p>
+    </div>
+    <div class="why">
+      <div class="why-l">
+      <article class="wc rv"><span class="wk">Enfoque</span><h3>Atención manual por WhatsApp</h3><p>Tu equipo responde cada mensaje de forma personal.</p><div class="wn"><b>A tener en cuenta</b>La respuesta depende del horario y de la disponibilidad de recepción.</div></article>
+      <article class="wc rv" style="--d:.06s"><span class="wk">Enfoque</span><h3>Chatbot tradicional</h3><p>Responde con flujos o menús predefinidos, útil para preguntas simples.</p><div class="wn"><b>A tener en cuenta</b>Se centra en la conversación; la gestión de la clínica queda en otras herramientas.</div></article>
+      <article class="wc rv" style="--d:.12s"><span class="wk">Enfoque</span><h3>CRM genérico</h3><p>Organiza contactos y procesos comerciales de cualquier sector.</p><div class="wn"><b>A tener en cuenta</b>Necesita adaptarse al funcionamiento de una clínica odontológica.</div></article>
+      </div>
+      <article class="wc am rv" style="--d:.18s"><span class="wk">Amarella Studio CO.</span><h3>Plataforma para clínicas</h3><p>Atención inteligente y gestión de la clínica en un mismo lugar.</p>
+        <ul>
+          <li>Asistente inteligente de WhatsApp</li>
+          <li>Servicios y precios configurados por clínica</li>
+          <li>Panel administrativo</li>
+          <li>Control del consumo de mensajes</li>
+          <li>Gestión de la suscripción</li>
+          <li>Activar o pausar la IA</li>
+          <li>Transferencia a un asesor humano</li>
+          <li>Varias clínicas en una misma plataforma, con datos separados</li>
+        </ul>
+      </article>
+    </div>
+    <p class="why-note rv">Comparación de enfoques generales. No se refiere a ninguna empresa o producto concreto.</p>
+  </div>
+</section>
+
 <!-- DEMO INTERACTIVA -->
-<section id="demo" class="white">
+<section id="demo" class="paper">
   <div class="wrap dm">
     <div class="dm-phone rv">
       <span class="dm-badge">Demostración interactiva</span>
@@ -768,7 +844,7 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
               <div class="kpi"><small>Conversaciones</small><strong>128</strong><span>Ejemplo</span></div>
               <div class="kpi"><small>Contactos nuevos</small><strong>34</strong><span>Ejemplo</span></div>
               <div class="kpi"><small>Transferidas</small><strong>9</strong><span>Ejemplo</span></div>
-              <div class="kpi"><small>Consumo del plan</small><strong>62%</strong><span>Ejemplo</span></div>
+              <div class="kpi"><small>Consumo del plan</small><strong>65%</strong><span>Ejemplo</span></div>
             </div>
             <div class="row r2">
               <div class="box"><span class="bt">Conversaciones por día</span>
@@ -783,8 +859,8 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
               </div>
               <div class="box"><span class="bt">Asistente de IA</span>
                 <div class="ia"><span class="dot"></span>Activo<span class="sw" aria-hidden="true"></span></div>
-                <div class="gauge"><div class="ring"><svg viewBox="0 0 104 104" aria-hidden="true"><circle class="tr" cx="52" cy="52" r="42"/><circle class="pg" cx="52" cy="52" r="42"/></svg><div><strong>62%</strong><small>del plan</small></div></div>
-                <div class="gl"><span>Consumidos<b>620</b></span><span>Disponibles<b>380</b></span></div></div>
+                <div class="gauge"><div class="ring"><svg viewBox="0 0 104 104" aria-hidden="true"><circle class="tr" cx="52" cy="52" r="42"/><circle class="pg" cx="52" cy="52" r="42"/></svg><div><strong>65%</strong><small>del plan</small></div></div>
+                <div class="gl"><span>Consumidos<b>520</b></span><span>Disponibles<b>280</b></span></div></div>
               </div>
             </div>
             <div class="box" style="margin-top:14px"><span class="bt">Conversaciones recientes</span>
@@ -850,13 +926,13 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
             </div>
           </section>
           <section class="view" data-v="plan">
-            <div class="vh"><div><h4>Plan y suscripción</h4><small>Cuenta de demostración</small></div><span class="pill">Plan activo</span></div>
+            <div class="vh"><div><h4>Plan y suscripción</h4><small>Cuenta de demostración · Plan Estándar</small></div><span class="pill">Plan activo</span></div>
             <div class="row r2" style="margin-top:0">
               <div class="box"><span class="bt">Consumo de mensajes</span>
-                <div class="l"><span>Este mes</span><b>620 / 1.000</b></div><div class="bar"><i></i></div>
+                <div class="l"><span>Este mes</span><b>520 / 800</b></div><div class="bar"><i></i></div>
                 <div class="kpis" style="grid-template-columns:repeat(3,1fr);margin-top:16px">
-                  <div class="kpi"><small>Consumidos</small><strong>620</strong></div>
-                  <div class="kpi"><small>Disponibles</small><strong>380</strong></div>
+                  <div class="kpi"><small>Consumidos</small><strong>520</strong></div>
+                  <div class="kpi"><small>Disponibles</small><strong>280</strong></div>
                   <div class="kpi"><small>Vence en</small><strong>18 d</strong></div>
                 </div>
               </div>
@@ -869,7 +945,7 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
       </div>
     </div>
     <p class="dm-note rv">Panel de demostración con cifras de ejemplo. No corresponde a una clínica real.</p>
-    <div class="actions"><button class="btn btn-y" type="button" data-open-form>Solicitar una demostración <svg class="go"><use href="#i-arrow"/></svg></button><a class="btn btn-o" href="#planes">Comparar planes</a></div>
+    <div class="actions"><button class="btn btn-y" type="button" data-open-form>Solicitar una demostración <svg class="go"><use href="#i-arrow"/></svg></button><a class="btn btn-o" href="#comparacion">Comparar planes</a></div>
   </div>
 </section>
 
@@ -913,58 +989,64 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
   </div>
 </section>
 
+<!-- GANCHO -->
+<section class="hook-s white" id="gancho">
+  <div class="wrap">
+    <div class="hook rv">
+      <div>
+        <span class="eyebrow">Amarella Studio CO.</span>
+        <h2>Una plataforma diseñada para que tu clínica gestione su atención de manera <span class="hl">más inteligente.</span></h2>
+        <p>Automatiza conversaciones, administra tus servicios y controla tu plataforma desde un mismo lugar.</p>
+      </div>
+      <button class="btn btn-y" type="button" data-open-form>Solicitar demostración <svg class="go"><use href="#i-arrow"/></svg></button>
+    </div>
+  </div>
+</section>
+
 <!-- PLANES -->
 <section id="planes" class="paper">
   <div class="wrap">
     <div class="sec-head center">
       <span class="eyebrow rv">Planes</span>
       <h2 class="rv" style="--d:.06s">Elige el plan que <span class="hl">acompaña a tu clínica.</span></h2>
-      <p class="rv" style="--d:.12s">Cada plan incluye un límite mensual de mensajes. Los precios y condiciones se confirman al contratar.</p>
+      <p class="rv" style="--d:.12s">Precios mensuales en pesos colombianos. Los dos planes incluyen las mismas funcionalidades; cambian el precio y los mensajes incluidos.</p>
     </div>
     <div class="plans">
       <article class="plan rv">
-        <div class="plan-h"><h3>Plan Estándar</h3></div>
+        <div class="plan-h"><h3>Estándar</h3></div>
         <p class="desc">Para clínicas que empiezan a automatizar su atención.</p>
-        <div class="price">A consultar</div><div class="price-n">Precio según tu clínica</div>
-        <div class="limit"><span>Mensajes al mes</span><span>Límite según plan · se confirma al contratar</span></div>
+        <div class="pz"><span class="cur">$</span><span class="amt">99.900</span><span class="per">COP<br>/ mes</span></div>
+        <div class="msgs"><svg><use href="#i-chat"/></svg><span><b>800</b> mensajes al mes</span></div>
         <div class="incl">Incluye</div>
-        <ul>
-          <li><svg><use href="#i-check"/></svg>Asistente inteligente de WhatsApp</li>
-          <li><svg><use href="#i-check"/></svg>Panel de cliente</li>
-          <li><svg><use href="#i-check"/></svg>Estado de la IA y consumo de mensajes</li>
-        </ul>
-        <button class="btn btn-o" type="button" data-open-form data-plan="Estándar">Elegir Estándar</button>
+        <ul><li><svg><use href="#i-check"/></svg>Asistente inteligente de WhatsApp</li><li><svg><use href="#i-check"/></svg>Configuración de servicios y precios</li><li><svg><use href="#i-check"/></svg>Panel administrativo</li><li><svg><use href="#i-check"/></svg>Control del consumo de mensajes</li><li><svg><use href="#i-check"/></svg>Gestión de la suscripción</li><li><svg><use href="#i-check"/></svg>Activar o pausar la IA</li></ul>
+        <p class="cond">Pago mensual en COP. Tras tu solicitud, un asesor te contacta para activar el plan.</p>
+        <button class="btn btn-y" type="button" data-open-form data-plan="Estándar">Elegir Estándar <svg class="go"><use href="#i-arrow"/></svg></button>
       </article>
       <article class="plan prem rv" style="--d:.1s">
-        <div class="plan-h"><h3>Plan Premium</h3><span class="badge">Recomendado</span></div>
+        <div class="plan-h"><h3>Premium</h3><span class="badge">Recomendado</span></div>
         <p class="desc">Para clínicas con mayor volumen de conversaciones.</p>
-        <div class="price">A consultar</div><div class="price-n">Precio según tu clínica</div>
-        <div class="limit"><span>Mensajes al mes</span><span>Mayor volumen · se confirma al contratar</span></div>
+        <div class="pz"><span class="cur">$</span><span class="amt">189.000</span><span class="per">COP<br>/ mes</span></div>
+        <div class="msgs"><svg><use href="#i-chat"/></svg><span><b>2.500</b> mensajes al mes</span></div>
         <div class="incl">Incluye</div>
-        <ul>
-          <li><svg><use href="#i-check"/></svg>Todo lo del plan Estándar</li>
-          <li><svg><use href="#i-check"/></svg>Más mensajes al mes</li>
-          <li><svg><use href="#i-check"/></svg>Avisos por correo y WhatsApp</li>
-        </ul>
+        <ul><li><svg><use href="#i-check"/></svg>Asistente inteligente de WhatsApp</li><li><svg><use href="#i-check"/></svg>Configuración de servicios y precios</li><li><svg><use href="#i-check"/></svg>Panel administrativo</li><li><svg><use href="#i-check"/></svg>Control del consumo de mensajes</li><li><svg><use href="#i-check"/></svg>Gestión de la suscripción</li><li><svg><use href="#i-check"/></svg>Activar o pausar la IA</li></ul>
+        <p class="cond">Pago mensual en COP. Tras tu solicitud, un asesor te contacta para activar el plan.</p>
         <button class="btn btn-y" type="button" data-open-form data-plan="Premium">Elegir Premium <svg class="go"><use href="#i-arrow"/></svg></button>
       </article>
     </div>
-    <div class="cmp rv">
+    <div class="cmp rv" id="comparacion">
       <h3>Comparación de planes</h3>
       <div class="tw"><table>
         <thead><tr><th>Característica</th><th>Estándar</th><th>Premium</th></tr></thead>
         <tbody>
-          <tr><td>Asistente inteligente de WhatsApp</td><td><span class="y"><svg><use href="#i-check"/></svg></span></td><td><span class="y"><svg><use href="#i-check"/></svg></span></td></tr>
-          <tr><td>Panel de cliente</td><td><span class="y"><svg><use href="#i-check"/></svg></span></td><td><span class="y"><svg><use href="#i-check"/></svg></span></td></tr>
-          <tr><td>Estado de la IA y consumo</td><td><span class="y"><svg><use href="#i-check"/></svg></span></td><td><span class="y"><svg><use href="#i-check"/></svg></span></td></tr>
-          <tr><td>Límite mensual de mensajes</td><td>Según plan</td><td>Mayor</td></tr>
-          <tr><td>Avisos por correo y WhatsApp</td><td>—</td><td><span class="y"><svg><use href="#i-check"/></svg></span></td></tr>
+          <tr class="hlr"><td>Precio mensual</td><td><b>$99.900 COP</b></td><td><b>$189.000 COP</b></td></tr>
+          <tr class="hlr"><td>Mensajes incluidos al mes</td><td><b>800</b></td><td><b>2.500</b></td></tr>
+          <tr><td>Asistente inteligente de WhatsApp</td><td><span class="y"><svg><use href="#i-check"/></svg></span></td><td><span class="y"><svg><use href="#i-check"/></svg></span></td></tr><tr><td>Configuración de servicios y precios</td><td><span class="y"><svg><use href="#i-check"/></svg></span></td><td><span class="y"><svg><use href="#i-check"/></svg></span></td></tr><tr><td>Panel administrativo</td><td><span class="y"><svg><use href="#i-check"/></svg></span></td><td><span class="y"><svg><use href="#i-check"/></svg></span></td></tr><tr><td>Control del consumo de mensajes</td><td><span class="y"><svg><use href="#i-check"/></svg></span></td><td><span class="y"><svg><use href="#i-check"/></svg></span></td></tr><tr><td>Gestión de la suscripción</td><td><span class="y"><svg><use href="#i-check"/></svg></span></td><td><span class="y"><svg><use href="#i-check"/></svg></span></td></tr><tr><td>Activar o pausar la IA</td><td><span class="y"><svg><use href="#i-check"/></svg></span></td><td><span class="y"><svg><use href="#i-check"/></svg></span></td></tr>
           <tr><td>Gestión de citas</td><td><span class="st st-dev">En desarrollo</span></td><td><span class="st st-dev">En desarrollo</span></td></tr>
           <tr><td>Seguimiento de pacientes</td><td><span class="st st-dev">En desarrollo</span></td><td><span class="st st-dev">En desarrollo</span></td></tr>
         </tbody>
       </table></div>
     </div>
-    <p class="plans-note rv">Las funcionalidades en desarrollo no están operativas todavía. Los precios, límites y condiciones se confirman al contratar.</p>
+    <p class="plans-note rv">Las funcionalidades marcadas «En desarrollo» todavía no están operativas y no forman parte de los planes actuales.</p>
   </div>
 </section>
 
@@ -980,8 +1062,8 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
       <div class="qa"><button type="button" aria-expanded="false"><span>¿Cómo funciona el asistente?</span><i class="pm"></i></button><div class="body"><div><p>Recibe los mensajes de tus pacientes por WhatsApp y responde con la información que tu clínica configuró: servicios, precios y horarios. Cuando hace falta, pasa la conversación a un asesor de tu equipo.</p></div></div></div>
       <div class="qa"><button type="button" aria-expanded="false"><span>¿Cómo conecto el WhatsApp de mi clínica?</span><i class="pm"></i></button><div class="body"><div><p>Nos encargamos de la conexión durante la implementación. Al solicitar la demostración te indicaremos qué necesitamos de tu parte.</p></div></div></div>
       <div class="qa"><button type="button" aria-expanded="false"><span>¿Cómo se gestionan las citas?</span><i class="pm"></i></button><div class="body"><div><p>La gestión de citas (disponibilidad, agendamiento, confirmaciones, cancelaciones y recordatorios) está en desarrollo y todavía no está operativa. Hoy el asistente atiende consultas y puede pasar la conversación a un asesor para coordinarlas.</p></div></div></div>
-      <div class="qa"><button type="button" aria-expanded="false"><span>¿Qué incluye cada plan?</span><i class="pm"></i></button><div class="body"><div><p>Ambos planes incluyen el asistente de WhatsApp y el panel de cliente, con un límite mensual de mensajes. Premium está pensado para mayor volumen e incluye avisos por correo y WhatsApp. Precios, límites y condiciones se confirman al contratar.</p></div></div></div>
-      <div class="qa"><button type="button" aria-expanded="false"><span>¿Cómo funciona el consumo mensual?</span><i class="pm"></i></button><div class="body"><div><p>Cada plan tiene un límite mensual de mensajes. En tu panel ves los mensajes consumidos y los disponibles, y recibes avisos cuando el plan está por vencer o el límite se acerca.</p></div></div></div>
+      <div class="qa"><button type="button" aria-expanded="false"><span>¿Qué incluye cada plan?</span><i class="pm"></i></button><div class="body"><div><p>Estándar cuesta $99.900 COP al mes e incluye 800 mensajes mensuales. Premium cuesta $189.000 COP al mes e incluye 2.500 mensajes mensuales. Los dos incluyen el asistente de WhatsApp, la configuración de servicios y precios, el panel administrativo, el control del consumo, la gestión de la suscripción y el control del estado de la IA.</p></div></div></div>
+      <div class="qa"><button type="button" aria-expanded="false"><span>¿Cómo funciona el consumo mensual?</span><i class="pm"></i></button><div class="body"><div><p>Cada plan incluye un número de mensajes al mes: 800 en Estándar y 2.500 en Premium. En tu panel ves los mensajes consumidos y los disponibles, y recibes avisos cuando el plan está por vencer o el límite se acerca.</p></div></div></div>
       <div class="qa"><button type="button" aria-expanded="false"><span>¿Cómo administro mi cuenta?</span><i class="pm"></i></button><div class="body"><div><p>Desde tu panel puedes ver el estado de la IA, activar o desactivar el asistente, revisar el consumo, consultar tu plan y editar los servicios, precios y horarios de tu clínica. Cada clínica ve únicamente su información.</p></div></div></div>
       <div class="qa"><button type="button" aria-expanded="false"><span>¿Qué soporte recibe mi clínica?</span><i class="pm"></i></button><div class="body"><div><p>Te acompañamos en la implementación y en el uso del panel. Los canales y horarios de soporte se confirmarán al contratar.</p></div></div></div>
     </div>
@@ -1016,7 +1098,7 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
     <button class="x" type="button" data-close aria-label="Cerrar"><svg><use href="#i-close"/></svg></button>
     <span class="eyebrow">Demostración</span>
     <h3 id="fTitle">Solicita una demostración</h3>
-    <p>Déjanos tus datos y te mostramos cómo funcionaría Amarella en tu clínica.</p>
+    <p id="fLead">Déjanos tus datos y te mostramos cómo funcionaría Amarella en tu clínica.</p>
     <form id="demoForm" class="fg" novalidate>
       <div class="fr">
         <div class="fl"><label for="fNombre">Nombre</label><input id="fNombre" name="nombre" type="text" autocomplete="name" required><span class="er">Escribe tu nombre.</span></div>
@@ -1026,7 +1108,7 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
         <div class="fl"><label for="fWa">WhatsApp</label><input id="fWa" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="Con código de país" required><span class="er">Escribe un número válido (7 a 15 dígitos).</span></div>
         <div class="fl"><label for="fMail">Correo electrónico</label><input id="fMail" name="correo" type="email" autocomplete="email" required><span class="er">Escribe un correo válido.</span></div>
       </div>
-      <div class="fl"><label for="fPlan">Plan de interés</label><select id="fPlan" name="plan"><option value="Sin preferencia">Sin preferencia</option><option value="Estándar">Plan Estándar</option><option value="Premium">Plan Premium</option></select></div>
+      <div class="fl"><label for="fPlan">Plan de interés</label><select id="fPlan" name="plan"><option value="Sin preferencia">Sin preferencia</option><option value="Estándar">Estándar · $99.900 COP/mes</option><option value="Premium">Premium · $189.000 COP/mes</option></select></div>
       <div class="fs" id="fStatus" role="status" aria-live="polite"></div>
       <button class="btn btn-y" type="submit" id="fSubmit">Enviar solicitud</button>
       <p class="small">Usaremos estos datos solo para contactarte sobre la demostración.</p>
@@ -1114,7 +1196,9 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
   function clearStatus(){st.className='fs';st.innerHTML=''}
   $$('[data-open-form]').forEach(function(b){b.addEventListener('click',function(){
     setMenu(false);clearStatus();sub.disabled=false;sub.textContent='Enviar solicitud';
-    plan.value=b.getAttribute('data-plan')||'Sin preferencia';
+    var pl=b.getAttribute('data-plan');plan.value=pl||'Sin preferencia';
+    $('#fTitle').textContent=pl?('Solicitar el plan '+pl):'Solicita una demostración';
+    $('#fLead').textContent=pl?('Déjanos tus datos y un asesor te contactará para activar el plan '+pl+'. Esta solicitud no realiza ningún cobro.'):'Déjanos tus datos y te mostramos cómo funcionaría Amarella en tu clínica.';
     openDlg(formDlg);setTimeout(function(){$('#fNombre').focus()},50);
   })});
   function setBad(input,bad){input.closest('.fl').classList.toggle('bad',bad);input.setAttribute('aria-invalid',bad)}
