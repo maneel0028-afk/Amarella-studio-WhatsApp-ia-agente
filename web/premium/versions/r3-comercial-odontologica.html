@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Amarella Studio CO. | Plataforma para clínicas odontológicas</title>
+<meta name="description" content="Amarella Studio CO. es una plataforma tecnológica para clínicas odontológicas: atención inteligente por WhatsApp, panel administrativo y automatización de procesos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Sistema: blanco dominante, amarillo de identidad, negro para texto y contrastes puntuales */
+:root{
+  --y:#FFC400; --y-hover:#FFB800; --y-tint:#FFF8DC; --y-line:#F2E2A0;
+  --ink:#0D0D0D; --mute:rgba(13,13,13,.64); --soft:rgba(13,13,13,.46);
+  --line:rgba(13,13,13,.09); --line-2:rgba(13,13,13,.15); --white:#fff; --off:#FAF9F5;
+  --sh-1:0 1px 2px rgba(13,13,13,.04),0 6px 18px -6px rgba(13,13,13,.08);
+  --sh-2:0 2px 4px rgba(13,13,13,.04),0 22px 48px -16px rgba(13,13,13,.18);
+  --r:14px; --r-lg:22px;
+  --font:"Plus Jakarta Sans","Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.22,.8,.3,1);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--white);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:8px}
+.wrap{width:100%;max-width:1180px;margin:0 auto;padding-inline:max(20px,env(safe-area-inset-left,0px))}
+section{padding-block:108px}
+.tint{background:var(--y-tint)}
+
+h1,h2,h3,h4{margin:0;font-weight:800;letter-spacing:-.03em;word-spacing:.05em;line-height:1.08;text-wrap:balance}
+h1{font-size:clamp(2.3rem,4.9vw,3.8rem);line-height:1.05}
+h2{font-size:clamp(1.9rem,3.9vw,2.9rem)}
+h3{font-size:1.22rem;letter-spacing:-.02em;line-height:1.2}
+p{margin:0}
+.lead{font-size:clamp(1.05rem,1.5vw,1.17rem);color:var(--mute);max-width:50ch}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.76rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--ink)}
+.eyebrow::before{content:"";width:22px;height:4px;border-radius:4px;background:var(--y)}
+.hl{background:linear-gradient(transparent 64%,var(--y) 64% 90%,transparent 90%);padding-inline:.04em}
+.sec-head{display:grid;gap:16px;max-width:680px;margin-bottom:60px}
+.sec-head.center{margin-inline:auto;text-align:center;justify-items:center}
+.sec-head p{color:var(--mute);font-size:1.08rem}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 28px;border-radius:12px;font-weight:700;font-size:.97rem;border:1.5px solid transparent;transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .2s,color .2s,border-color .2s;white-space:nowrap}
+.btn svg{width:18px;height:18px;transition:transform .25s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.btn-y{background:var(--y);color:var(--ink);box-shadow:0 8px 20px -10px rgba(255,184,0,.95)}
+.btn-y:hover{background:var(--y-hover);transform:translateY(-2px);box-shadow:0 14px 26px -12px rgba(255,170,0,1)}
+.btn-o{background:var(--white);border-color:var(--line-2);color:var(--ink)}
+.btn-o:hover{border-color:var(--ink);transform:translateY(-2px)}
+.btn-k{background:var(--ink);color:var(--y)}
+.btn-k:hover{transform:translateY(-2px);box-shadow:0 16px 28px -14px rgba(13,13,13,.6)}
+.btn:active{transform:translateY(0)}
+.btn-sm{min-height:42px;padding:0 18px;font-size:.9rem}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid transparent;transition:border-color .25s,box-shadow .25s;padding-top:env(safe-area-inset-top,0px)}
+.nav.scrolled{border-color:var(--line);box-shadow:0 8px 24px -18px rgba(13,13,13,.3)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:72px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;letter-spacing:-.03em;font-size:1.12rem;line-height:1.1}
+.mark{width:38px;height:38px;border-radius:11px;background:var(--y);display:grid;place-items:center;flex:none}
+.mark svg{width:22px;height:22px}
+.brand small{display:block;font-size:.64rem;font-weight:700;letter-spacing:.14em;color:var(--soft);text-transform:uppercase;margin-top:3px}
+.menu{display:flex;align-items:center;gap:4px}
+.menu a:not(.btn){padding:10px 13px;border-radius:10px;font-size:.92rem;font-weight:600;color:var(--mute);transition:color .2s,background .2s}
+.menu a:not(.btn):hover{color:var(--ink);background:var(--y-tint)}
+.menu .btn{margin-left:8px}
+.burger{display:none;width:46px;height:46px;border:1.5px solid var(--line-2);border-radius:12px;background:var(--white);place-items:center}
+.burger span,.burger span::before,.burger span::after{display:block;width:18px;height:2px;background:var(--ink);border-radius:2px;position:relative;transition:transform .3s var(--ease),background .2s}
+.burger span::before,.burger span::after{content:"";position:absolute;left:0}
+.burger span::before{top:-6px}.burger span::after{top:6px}
+.burger[aria-expanded="true"] span{background:transparent}
+.burger[aria-expanded="true"] span::before{transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] span::after{transform:translateY(-6px) rotate(-45deg)}
+
+/* hero */
+.hero{padding-top:150px;padding-bottom:104px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:max(-60px,calc(50% - 760px));top:96px;width:min(560px,48vw);height:560px;border-radius:44px;background:var(--y-tint);z-index:0}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.04fr .96fr;gap:64px;align-items:center}
+.hero h1{margin:24px 0 24px;max-width:15ch}
+.hero .lead{max-width:46ch}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.trust{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:40px;padding-top:26px;border-top:1px solid var(--line);font-size:.9rem;font-weight:600;color:var(--mute)}
+.trust span{display:inline-flex;align-items:center;gap:9px}
+.trust i{width:18px;height:18px;border-radius:50%;background:var(--y);display:grid;place-items:center;flex:none}
+.trust i svg{width:11px;height:11px}
+.stage{position:relative;min-height:540px}
+.dash{position:absolute;left:0;top:112px;width:84%;background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh-2);padding:22px 36% 22px 22px}
+.phone{position:absolute;right:0;top:0;width:52%;max-width:290px;animation:float 8s ease-in-out infinite}
+.demo-tag{position:absolute;z-index:3;left:0;top:36px;background:var(--white);border:1px solid var(--line);box-shadow:var(--sh-1);border-radius:999px;padding:8px 15px;font-size:.74rem;font-weight:700;color:var(--mute);display:flex;gap:8px;align-items:center}
+.demo-tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--y)}
+
+/* teléfono realista */
+.phone-shell{background:var(--ink);border-radius:40px;padding:9px;box-shadow:0 36px 60px -26px rgba(13,13,13,.55),inset 0 0 0 1.5px #2a2a2a;position:relative}
+.phone-shell::before{content:"";position:absolute;top:17px;left:50%;transform:translateX(-50%);width:74px;height:20px;background:var(--ink);border-radius:12px;z-index:3}
+.wa{background:var(--white);border-radius:32px;overflow:hidden;display:flex;flex-direction:column}
+.wa-status{display:flex;justify-content:space-between;align-items:center;padding:12px 22px 6px;font-size:.7rem;font-weight:700;background:var(--y)}
+.wa-status svg{width:14px;height:14px;margin-left:3px}
+.wa-top{display:flex;align-items:center;gap:9px;padding:6px 14px 12px;background:var(--y)}
+.wa-top>svg{width:18px;height:18px;flex:none}
+.wa-av{width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--y);display:grid;place-items:center;font-weight:800;font-size:.8rem;flex:none}
+.wa-top b{display:block;font-size:.82rem;line-height:1.2}
+.wa-top small{font-size:.67rem;font-weight:600;opacity:.75}
+.wa-body{padding:14px 11px 12px;display:flex;flex-direction:column;gap:7px;background-color:#FBFAF5;background-image:radial-gradient(rgba(13,13,13,.045) 1px,transparent 1.2px);background-size:14px 14px;min-height:250px}
+.bub{max-width:86%;padding:8px 11px 6px;border-radius:14px;font-size:.78rem;line-height:1.42;overflow-wrap:anywhere;box-shadow:0 1px 1px rgba(13,13,13,.06)}
+.bub.c{background:var(--white);border-top-left-radius:4px;align-self:flex-start}
+.bub.a{background:var(--y);border-top-right-radius:4px;align-self:flex-end;font-weight:500}
+.bub time{display:flex;justify-content:flex-end;align-items:center;gap:3px;font-size:.6rem;opacity:.55;margin-top:2px}
+.bub time svg{width:13px;height:13px}
+.wa-chip{align-self:center;font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);background:var(--white);border:1px solid var(--line);border-radius:8px;padding:3px 10px}
+.slots{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}
+.slots span{padding:5px 10px;border-radius:8px;background:var(--white);border:1px solid rgba(13,13,13,.14);font-size:.72rem;font-weight:700}
+.slots span.on{background:var(--ink);color:var(--y);border-color:var(--ink)}
+.wa-input{display:flex;align-items:center;gap:8px;padding:9px 10px 14px;background:#FBFAF5}
+.wa-input span{flex:1;background:var(--white);border:1px solid var(--line);border-radius:99px;padding:7px 13px;font-size:.7rem;color:var(--soft)}
+.wa-input i{width:30px;height:30px;border-radius:50%;background:var(--ink);display:grid;place-items:center;flex:none;color:var(--y)}
+.wa-input i svg{width:14px;height:14px}
+
+/* componentes SaaS */
+.dh{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:16px}
+.dh b{font-size:.95rem;letter-spacing:-.01em;display:block;line-height:1.25}
+.dh small{display:block;font-size:.7rem;color:var(--soft);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;padding:5px 11px;border-radius:999px;background:var(--ink);color:var(--y);font-size:.7rem;font-weight:800;white-space:nowrap}
+.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--y);box-shadow:0 0 0 0 rgba(255,196,0,.7);animation:pulse 2.4s infinite}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.dash .kpis{grid-template-columns:1fr 1fr}
+.kpi{border:1px solid var(--line);border-radius:12px;padding:12px;min-width:0;background:var(--white)}
+.kpi small{display:block;font-size:.66rem;color:var(--soft);font-weight:700}
+.kpi strong{display:block;font-size:1.4rem;letter-spacing:-.03em;line-height:1.2;margin-top:2px}
+.usage{margin-top:10px;border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--white)}
+.usage .l{display:flex;justify-content:space-between;gap:10px;font-size:.74rem;font-weight:600;color:var(--mute);margin-bottom:9px}
+.usage .l b{color:var(--ink)}
+.bar{height:9px;border-radius:99px;background:var(--y-tint);overflow:hidden}
+.bar i{display:block;height:100%;width:62%;background:var(--y);border-radius:99px}
+.spark{display:flex;align-items:flex-end;gap:5px;height:48px;margin-top:12px}
+.spark i{flex:1;background:var(--y-tint);border-radius:5px 5px 2px 2px;min-width:0}
+.spark i.h{background:var(--y)}
+
+.strip{padding-block:0;border-block:1px solid var(--line)}
+.strip .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 28px;padding-block:22px;font-size:.92rem;font-weight:700;color:var(--mute)}
+.strip span{display:inline-flex;align-items:center;gap:10px}
+.strip svg{width:20px;height:20px;color:var(--ink)}
+
+/* retos */
+.pb{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.pbc{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px;box-shadow:var(--sh-1);display:flex;flex-direction:column;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .3s;min-width:0}
+.pbc:hover{transform:translateY(-4px);box-shadow:var(--sh-2);border-color:var(--ink)}
+.pbn{width:48px;height:48px;border-radius:14px;background:var(--y-tint);display:grid;place-items:center;margin-bottom:20px}
+.pbn svg{width:24px;height:24px}
+.pbc p{color:var(--mute);margin-top:10px;font-size:.95rem}
+.fix{margin-top:auto;padding-top:20px;display:grid;gap:8px;font-size:.88rem;font-weight:500;border-top:1px solid var(--line);margin-top:22px}
+.fix b{font-size:.66rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
+.fix .st{justify-self:start;margin-top:4px}
+.channels{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+#problemas{padding-bottom:48px}
+/* servicios */
+.svc{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px;box-shadow:var(--sh-1);transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .3s;min-width:0;position:relative;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-4px);box-shadow:var(--sh-2);border-color:var(--ink)}
+.card-h{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:22px}
+.ico{width:52px;height:52px;border-radius:15px;background:var(--ink);color:var(--y);display:grid;place-items:center;flex:none;transition:background .3s,color .3s}
+.ico svg{width:25px;height:25px}
+.card:hover .ico{background:var(--y);color:var(--ink)}
+.card p{color:var(--mute);margin-top:10px;font-size:.96rem}
+.card ul{list-style:none;margin:22px 0 0;padding:20px 0 0;border-top:1px solid var(--line);display:grid;gap:10px;font-size:.92rem;font-weight:500}
+.card li{display:flex;gap:11px;align-items:flex-start}
+.card li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--y);margin-top:.6em;box-shadow:0 0 0 3px var(--y-tint)}
+.c-a{grid-column:span 6}.c-b{grid-column:span 6}
+.c-c,.c-d,.c-e{grid-column:span 4}
+.c-a ul{grid-template-columns:1fr 1fr;column-gap:20px}
+.st{display:inline-flex;align-items:center;gap:7px;font-size:.66rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;padding:6px 11px;border-radius:999px;white-space:nowrap}
+.st-on{background:var(--ink);color:var(--y)}
+.st-on::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--y)}
+.st-dev{background:var(--white);color:var(--mute);border:1.5px dashed var(--line-2)}
+.card.dev .ico{background:var(--y-tint);color:var(--ink)}
+.card.dev:hover .ico{background:var(--y)}
+.card.dev li{color:var(--mute)}
+.card.dev li::before{background:transparent;box-shadow:none;border:1.5px solid var(--soft);width:8px;height:8px}
+.lg{display:inline-flex;align-items:center;gap:10px}
+.legend{display:flex;flex-wrap:wrap;gap:12px 22px;margin-bottom:34px;font-size:.84rem;font-weight:600;color:var(--mute);align-items:center}
+
+/* demo */
+.demo{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+.demo figure{margin:0;min-width:0;display:flex;flex-direction:column}
+.demo figcaption{margin-top:20px}
+.demo figcaption b{display:block;font-size:1.05rem;letter-spacing:-.02em}
+.demo figcaption span{display:block;color:var(--mute);font-size:.92rem;margin-top:4px}
+.frame{flex:1;background:var(--white);border:1px solid var(--y-line);box-shadow:var(--sh-1);border-radius:var(--r-lg);padding:46px 22px 28px;display:grid;place-items:center;min-height:470px;position:relative;overflow:hidden}
+.frame::after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:var(--y-tint);right:-70px;top:-70px}
+.frame>*{position:relative;z-index:1;width:100%}
+.frame .demo-badge{position:absolute;z-index:2;left:16px;top:16px;width:auto;display:inline-flex;align-items:center;gap:7px;font-size:.66rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;background:var(--white);border:1px solid var(--line-2);border-radius:99px;padding:5px 11px;color:var(--mute)}
+.frame .demo-badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--y)}
+.mini{max-width:272px;margin:0 auto}
+.appt{background:var(--white);border-radius:18px;border:1px solid var(--line);box-shadow:var(--sh-2);padding:18px;max-width:316px;margin:0 auto}
+.ap-h{display:flex;align-items:center;gap:11px;margin-bottom:14px}
+.ap-h .wa-av{width:38px;height:38px}
+.ap-h b{display:block;font-size:.9rem;line-height:1.2}.ap-h small{font-size:.7rem;color:var(--soft);font-weight:600}
+.ap-lbl{font-size:.64rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);margin:12px 0 7px}
+.days{display:grid;grid-template-columns:repeat(6,1fr);gap:5px}
+.days span{display:grid;justify-items:center;padding:7px 0;border-radius:9px;border:1px solid var(--line);font-size:.68rem;font-weight:700;color:var(--mute);line-height:1.2}
+.days span b{font-size:.86rem;color:var(--ink)}
+.days span.on{background:var(--ink);border-color:var(--ink);color:var(--y)}.days span.on b{color:var(--y)}
+.ap-slots{display:flex;gap:6px;flex-wrap:wrap}
+.ap-slots span{padding:6px 11px;border-radius:9px;border:1px solid var(--line);font-size:.76rem;font-weight:700}
+.ap-slots span.on{background:var(--y);border-color:var(--y)}
+.ap-rows{margin-top:12px;border-top:1px solid var(--line)}
+.ap-rows div{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:.78rem}
+.ap-rows span{color:var(--soft);font-weight:600}.ap-rows b{text-align:right}
+.ok{margin-top:14px;display:flex;align-items:center;gap:10px;background:var(--ink);color:var(--y);border-radius:11px;padding:11px 13px;font-size:.78rem;font-weight:800}
+.ok svg{width:18px;height:18px;flex:none}
+.gauge{display:flex;align-items:center;gap:16px;margin:2px 0 14px}
+.ring{position:relative;width:104px;height:104px;flex:none}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring .tr{fill:none;stroke:var(--y-tint);stroke-width:11}
+.ring .pg{fill:none;stroke:var(--y);stroke-width:11;stroke-linecap:round;stroke-dasharray:164 264}
+.ring div{position:absolute;inset:0;display:grid;place-content:center;text-align:center;line-height:1.1}
+.ring strong{font-size:1.5rem;letter-spacing:-.04em}.ring small{font-size:.6rem;color:var(--soft);font-weight:700}
+.gl{display:grid;gap:10px;font-size:.74rem;color:var(--mute);font-weight:600;min-width:0}
+.gl b{display:block;font-size:1.1rem;color:var(--ink);letter-spacing:-.02em;line-height:1.2}
+.row2{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 0;border-top:1px solid var(--line);font-size:.78rem;font-weight:600;color:var(--mute)}
+.row2 b{color:var(--ink)}
+.demo-note{margin-top:30px;text-align:center;font-size:.85rem;color:var(--soft);font-weight:600}
+
+/* proceso */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative}
+.step{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px;box-shadow:var(--sh-1);position:relative;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .3s;min-width:0}
+.step:hover{transform:translateY(-4px);box-shadow:var(--sh-2);border-color:var(--ink)}
+.step-top{display:flex;align-items:center;gap:0;margin-bottom:26px;margin-right:-30px}
+.num{width:56px;height:56px;border-radius:50%;background:var(--ink);color:var(--y);font-weight:800;font-size:1.25rem;display:grid;place-items:center;flex:none;box-shadow:0 0 0 6px var(--y);position:relative;z-index:1}
+.line{flex:1;height:2px;margin-left:12px;background:repeating-linear-gradient(90deg,var(--ink) 0 7px,transparent 7px 14px);opacity:.3;position:relative}
+.line::after{content:"";position:absolute;right:-1px;top:-4px;width:9px;height:9px;border-top:2px solid var(--ink);border-right:2px solid var(--ink);transform:rotate(45deg)}
+.step:last-child .step-top{margin-right:0}
+.step:last-child .line{display:none}
+.step .sico{position:absolute;top:30px;right:28px;width:46px;height:46px;border-radius:13px;background:var(--y-tint);display:grid;place-items:center}
+.step .sico svg{width:23px;height:23px}
+.step p{color:var(--mute);margin-top:10px;font-size:.96rem}
+.step .tagline{display:inline-block;margin-top:18px;font-size:.7rem;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--ink);background:var(--y-tint);border-radius:99px;padding:5px 11px}
+
+/* panel */
+.pnl>*,.hero .wrap>*{min-width:0}
+.pnl{display:grid;grid-template-columns:.78fr 1.22fr;gap:64px;align-items:center}
+.feat{list-style:none;padding:0;margin:32px 0 0;display:grid;gap:20px}
+.feat li{display:flex;gap:16px;align-items:flex-start}
+.feat .ico{width:44px;height:44px;border-radius:13px}
+.feat .ico svg{width:21px;height:21px}
+.feat b{display:block;letter-spacing:-.01em}
+.feat div span{display:block;color:var(--mute);font-size:.92rem;margin-top:1px}
+.big{background:var(--white);border:1px solid var(--line);border-radius:26px;box-shadow:var(--sh-2);overflow:hidden}
+.big-top{display:flex;align-items:center;gap:8px;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--off)}
+.big-top i{width:10px;height:10px;border-radius:50%;background:var(--line-2)}
+.big-top em{margin-left:10px;font-style:normal;font-size:.72rem;font-weight:700;color:var(--soft)}
+.tabs{display:flex;gap:6px;padding:14px 20px 0;overflow-x:auto;border-bottom:1px solid var(--line);scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs span{padding:10px 14px 12px;font-size:.8rem;font-weight:700;color:var(--soft);white-space:nowrap;border-bottom:3px solid transparent;margin-bottom:-1px}
+.tabs span.on{color:var(--ink);border-color:var(--y)}
+.main{padding:22px;min-width:0;display:grid;gap:14px}
+.g2{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}
+.g2.b{grid-template-columns:1.15fr .85fr}
+.box{border:1px solid var(--line);border-radius:14px;padding:18px;min-width:0;background:var(--white)}
+.box>small{display:block;font-size:.66rem;font-weight:800;color:var(--soft);letter-spacing:.07em;text-transform:uppercase;margin-bottom:14px}
+.iastate{display:flex;align-items:center;gap:10px;font-size:1.15rem;font-weight:800;letter-spacing:-.02em}
+.iastate .dot{width:12px;height:12px;border-radius:50%;background:var(--y);box-shadow:0 0 0 4px var(--y-tint);flex:none;animation:pulse 2.4s infinite}
+.sw{width:42px;height:24px;border-radius:99px;background:var(--ink);position:relative;flex:none;margin-left:auto}
+.sw::after{content:"";position:absolute;right:3px;top:3px;width:18px;height:18px;border-radius:50%;background:var(--y)}
+.bars{display:flex;align-items:stretch;gap:8px;height:116px}
+.bars div{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:6px;min-width:0}
+.bars i{display:block;width:100%;background:#FBE9A6;border-radius:6px 6px 3px 3px;flex:none}
+.bars i.h{background:var(--y)}
+.bars span{font-size:.62rem;font-weight:700;color:var(--soft)}
+.svc-row{display:flex;justify-content:space-between;gap:10px;font-size:.8rem;padding:9px 0;border-top:1px solid var(--line)}
+.svc-row:first-of-type{border-top:0;padding-top:0}.svc-row span{color:var(--mute)}.svc-row b{white-space:nowrap}
+
+/* planes */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+.plan{background:var(--white);border:1px solid var(--line);border-radius:26px;padding:34px 30px;box-shadow:var(--sh-1);display:flex;flex-direction:column;position:relative;overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .3s}
+.plan:hover{transform:translateY(-5px);box-shadow:var(--sh-2);border-color:var(--ink)}
+.plan-h{display:flex;justify-content:space-between;align-items:center;gap:10px;min-height:30px}
+.plan h3{font-size:1.2rem}
+.plan .desc{color:var(--mute);margin-top:8px;font-size:.95rem;min-height:3.1em}
+.price{margin:26px 0 4px;font-size:1.9rem;font-weight:800;letter-spacing:-.04em;line-height:1.1}
+.price-n{font-size:.8rem;color:var(--soft);font-weight:600;margin-bottom:24px}
+.incl{font-size:.66rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);padding-top:22px;border-top:1px solid var(--line);margin-bottom:14px}
+.plan ul{list-style:none;margin:0 0 30px;padding:0;display:grid;gap:13px;font-size:.93rem;font-weight:500}
+.plan li{display:flex;gap:11px;align-items:flex-start}
+.plan li svg{flex:none;width:20px;height:20px;padding:4px;border-radius:50%;background:var(--y);margin-top:2px}
+.plan .btn{margin-top:auto;width:100%}
+.plan.rec{border:2px solid var(--ink);box-shadow:0 34px 60px -30px rgba(13,13,13,.4);padding-top:42px}
+.plan.rec::before{content:"";position:absolute;left:0;right:0;top:0;height:10px;background:var(--y)}
+.plan.rec:hover{transform:translateY(-8px)}
+.plan.rec li svg{background:var(--ink);color:var(--y)}
+.badge{background:var(--ink);color:var(--y);font-size:.66rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:999px;white-space:nowrap}
+.plans-note{margin-top:30px;text-align:center;color:var(--soft);font-size:.88rem;font-weight:600}
+
+/* faq */
+.faq{max-width:820px;margin:0 auto;background:var(--white);border:1px solid var(--line);border-radius:22px;box-shadow:var(--sh-1);overflow:hidden}
+.qa{border-bottom:1px solid var(--line);position:relative;transition:background .3s}
+.qa:last-child{border-bottom:0}
+.qa::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--y);transform:scaleY(0);transform-origin:top;transition:transform .4s var(--ease)}
+.qa.open{background:var(--off)}
+.qa.open::before{transform:scaleY(1)}
+.qa button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;background:none;border:0;text-align:left;padding:22px 28px;font-weight:700;font-size:1.02rem;letter-spacing:-.015em;min-height:66px;transition:padding .3s var(--ease)}
+.qa:not(.open) button:hover{background:var(--y-tint)}
+.qa .pm{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--line-2);flex:none;position:relative;transition:background .25s,border-color .25s,transform .4s var(--ease)}
+.qa .pm::before,.qa .pm::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:2px;background:var(--ink);transform:translate(-50%,-50%);border-radius:2px;transition:transform .4s var(--ease)}
+.qa .pm::after{transform:translate(-50%,-50%) rotate(90deg)}
+.qa.open .pm{background:var(--y);border-color:var(--y);transform:rotate(180deg)}
+.qa.open .pm::after{transform:translate(-50%,-50%) rotate(0)}
+.qa .body{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .45s var(--ease),opacity .35s}
+.qa.open .body{grid-template-rows:1fr;opacity:1}
+.qa .body>div{overflow:hidden}
+.qa .body p{padding:0 28px 26px;color:var(--mute);max-width:62ch}
+
+/* contacto */
+.contact{background:var(--y);padding-block:116px;position:relative;overflow:hidden}
+.contact::before,.contact::after{content:"";position:absolute;border-radius:50%;border:2px solid rgba(13,13,13,.1)}
+.contact::before{width:520px;height:520px;left:-210px;bottom:-310px}
+.contact::after{width:340px;height:340px;right:-100px;top:-150px}
+.contact .wrap{position:relative;z-index:1;text-align:center;display:grid;justify-items:center;gap:24px}
+.contact .eyebrow::before{background:var(--ink)}
+.contact h2{max-width:18ch;font-size:clamp(2.1rem,4.8vw,3.5rem);line-height:1.05}
+.contact h2 em{font-style:normal;color:var(--y);padding:0 .2em;background:linear-gradient(var(--ink),var(--ink)) no-repeat 0 58%/100% 84%;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.contact p{max-width:48ch;font-size:1.12rem;color:rgba(13,13,13,.82)}
+.contact .actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:8px}
+.contact .btn-o{background:transparent;border-color:var(--ink)}
+.contact .btn-o:hover{background:var(--ink);color:var(--y)}
+.pending{margin-top:10px;display:inline-flex;gap:10px;align-items:center;padding:11px 18px;border-radius:12px;background:rgba(255,255,255,.55);border:1.5px dashed rgba(13,13,13,.45);font-size:.86rem;font-weight:600;max-width:100%}
+
+footer{padding-block:44px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px;font-size:.88rem;color:var(--mute);font-weight:500}
+footer nav{display:flex;flex-wrap:wrap;gap:6px 22px}
+footer nav a:hover{color:var(--ink)}
+
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,196,0,.65)}70%{box-shadow:0 0 0 7px rgba(255,196,0,0)}100%{box-shadow:0 0 0 0 rgba(255,196,0,0)}}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rv{opacity:1;transform:none;transition:none}
+  .phone,.pill::before,.iastate .dot{animation:none}*{transition-duration:.01ms!important}
+}
+
+/* tablet */
+@media(max-width:1024px){
+  section{padding-block:88px}
+  .hero .wrap{grid-template-columns:minmax(0,1fr);gap:56px}
+  .hero{padding-top:130px}.hero::before{display:none}
+  .hero h1{max-width:18ch}
+  .stage{min-height:490px;max-width:600px;width:100%;margin-inline:auto}
+  .pb{grid-template-columns:repeat(2,1fr)}
+  .svc{grid-template-columns:repeat(2,1fr)}
+  .c-a,.c-b,.c-c,.c-d,.c-e{grid-column:auto}
+  .c-e{grid-column:1/-1}
+  .demo{grid-template-columns:1fr 1fr}
+  .demo figure:last-child{grid-column:1/-1}
+  .demo figure:last-child .frame{min-height:0}
+  .pnl{grid-template-columns:minmax(0,1fr);gap:48px}
+  .plans{grid-template-columns:1fr;max-width:520px;margin-inline:auto}
+  .plan .desc{min-height:0}
+  .steps{grid-template-columns:1fr;max-width:600px;margin-inline:auto;gap:18px}
+  .steps::before{content:"";position:absolute;left:58px;top:56px;bottom:56px;width:2px;background:repeating-linear-gradient(180deg,var(--ink) 0 7px,transparent 7px 14px);opacity:.28}
+  .step{padding:26px 26px 26px 100px}
+  .step-top{position:absolute;left:30px;top:26px;margin:0}
+  .step-top .line{display:none}
+  .step .sico{top:26px;right:22px}
+  .step h3{padding-right:56px}
+}
+@media(max-width:860px){
+  .burger{display:grid}
+  .menu{position:fixed;top:calc(72px + env(safe-area-inset-top,0px));left:0;right:0;flex-direction:column;align-items:stretch;gap:4px;padding:14px max(20px,env(safe-area-inset-left,0px)) 26px;background:var(--white);border-bottom:1px solid var(--line);box-shadow:0 24px 40px -24px rgba(13,13,13,.3);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .25s,transform .3s var(--ease),visibility .25s;max-height:calc(100vh - 72px);overflow:auto}
+  .menu.open{opacity:1;visibility:visible;transform:none}
+  .menu a:not(.btn){padding:15px 14px;font-size:1.05rem;color:var(--ink);border-bottom:1px solid var(--line);border-radius:0}
+  .menu .btn{margin:14px 0 0;min-height:54px}
+}
+/* móvil: composición propia */
+@media(max-width:640px){
+  section{padding-block:68px}
+  .sec-head{margin-bottom:40px}
+  .hero{padding-top:108px;padding-bottom:60px}
+  .hero h1{margin:18px 0 18px;max-width:none;font-size:clamp(2.1rem,9.2vw,2.6rem)}
+  .hero .actions{flex-direction:column;margin-top:28px}
+  .hero .actions .btn,.contact .actions .btn{width:100%}
+  .trust{margin-top:30px;padding-top:22px;gap:12px}
+  .stage{min-height:0;display:grid;gap:0;max-width:none}
+  .dash{position:relative;left:auto;top:auto;width:100%;padding:18px;order:2;margin-top:-26px;padding-top:44px;z-index:0}
+  .dash .kpis{grid-template-columns:1fr 1fr}
+  .phone{position:relative;right:auto;top:auto;width:100%;max-width:290px;margin-inline:auto;animation:none;order:1;z-index:1}
+  .demo-tag{position:static;order:3;justify-self:center;margin-top:16px}
+  .card,.step{padding:26px}
+  .step{padding:24px 22px 24px 84px}
+  .step-top{left:20px;top:22px}
+  .num{width:46px;height:46px;font-size:1.05rem;box-shadow:0 0 0 5px var(--y)}
+  .step .sico{width:40px;height:40px;top:22px;right:18px}.step .sico svg{width:20px;height:20px}
+  .steps::before{left:43px;top:46px;bottom:46px}
+  .pb{grid-template-columns:1fr}
+  .svc{grid-template-columns:1fr}
+  .c-a ul{grid-template-columns:1fr}
+  .demo{grid-template-columns:1fr}
+  .demo figure:last-child{grid-column:auto}
+  .frame{min-height:0;padding:50px 14px 24px}
+  .gauge{flex-direction:column;align-items:flex-start}
+  .g2,.g2.b{grid-template-columns:1fr}
+  .main{padding:14px}
+  .tabs{padding:10px 14px 0}
+  .kpis{gap:8px}.kpi{padding:10px}.kpi strong{font-size:1.2rem}.kpi small{font-size:.62rem}
+  .strip .wrap{justify-content:flex-start;gap:12px 22px}
+  .qa button{padding:18px 20px;font-size:.98rem;gap:14px}.qa .body p{padding:0 20px 22px}
+  .plan{padding:30px 24px}.plan.rec{padding-top:40px}
+  .contact{padding-block:84px}
+  .contact h2{font-size:clamp(1.95rem,8.6vw,2.4rem)}
+  .contact .actions{flex-direction:column;width:100%}
+  .pending{font-size:.82rem}
+  footer .wrap{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:380px){
+  h1{font-size:2.05rem}
+  .brand small{letter-spacing:.1em}
+  .trust{gap:10px 14px}
+  .step{padding-left:76px}
+  .steps::before{left:39px}
+  .step-top{left:16px}
+}
+</style>
+</head>
+<body>
+
+<!-- Iconos reutilizables -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H11l-4.2 3.6c-.5.4-1.3.1-1.3-.6V16h-1A1.5 1.5 0 0 1 3 14.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 3v4M16 3v4M3.5 10h17M8.5 14.5l2.2 2.2 4.3-4.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8.5" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 19.5c.6-3.3 3.2-5 6.5-5s5.9 1.7 6.5 5M16 5.3a3.5 3.5 0 0 1 0 6.4M18 14.8c2 .6 3.1 2.2 3.5 4.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-dash" viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13" y="3" width="8" height="6" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13" y="11" width="8" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="15" width="8" height="6" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2.5 5 13.5h6l-1 8 8-11h-6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 17V11a6 6 0 0 1 12 0v6l1.5 2h-15zM10 21h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.8v2.5M12 18.7v2.5M21.2 12h-2.5M5.3 12H2.8M18.5 5.5l-1.8 1.8M7.3 16.7l-1.8 1.8M18.5 18.5l-1.8-1.8M7.3 7.3 5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16M8 16v-4M12 16V8M16 16v-6" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 10h18M7 15h3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-ticks" viewBox="0 0 24 24"><path d="M2 13l4 4L15 7M10 15l2 2L21 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="M4 12l16-8-5 16-3-7z" fill="currentColor"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0zM12 17v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h9M17 7h3M4 17h3M11 17h9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="15" cy="7" r="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="9" cy="17" r="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Amarella Studio CO., inicio">
+      <span class="mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 4.5 20h3.2l1.5-3.6h5.6l1.5 3.6h3.2zM10.2 13.8 12 9.4l1.8 4.4z" fill="#0D0D0D" fill-rule="evenodd"/></svg></span>
+      <span>Amarella<small>Studio CO.</small></span>
+    </a>
+    <nav class="menu" id="menu" aria-label="Principal">
+      <a href="#problemas">Retos</a>
+      <a href="#servicios">Plataforma</a>
+      <a href="#demo">Demostración</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#panel">Panel</a>
+      <a href="#planes">Planes</a>
+      <a class="btn btn-y btn-sm" href="#contacto" data-cta>Solicitar demo</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span></button>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow rv">Plataforma para clínicas odontológicas</span>
+      <h1 class="rv" style="--d:.08s">Atiende a cada paciente de tu clínica, <span class="hl">sin perder ninguno.</span></h1>
+      <p class="lead rv" style="--d:.16s">Amarella reúne en una sola plataforma la atención inteligente por WhatsApp, un panel para administrar tu clínica y la automatización de procesos.</p>
+      <div class="actions rv" style="--d:.24s">
+        <a class="btn btn-y" href="#contacto" data-cta>Solicitar una demostración <svg><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-o" href="#servicios">Conocer la plataforma</a>
+      </div>
+      <div class="trust rv" style="--d:.32s">
+        <span><i><svg><use href="#i-check"/></svg></i>Atención las 24 horas</span>
+        <span><i><svg><use href="#i-check"/></svg></i>Con los servicios y precios de tu clínica</span>
+        <span><i><svg><use href="#i-check"/></svg></i>Paso a un asesor humano</span>
+      </div>
+    </div>
+
+    <div class="stage rv" style="--d:.2s" role="img" aria-label="Ejemplo de conversación de WhatsApp y panel de control, con datos de demostración">
+      <div class="dash">
+        <div class="dh"><div><b>Tu cuenta</b><small>Clínica Dental Ejemplo</small></div><span class="pill">IA activa</span></div>
+        <div class="kpis">
+          <div class="kpi"><small>Conversaciones</small><strong>128</strong></div>
+          <div class="kpi"><small>Transferidas</small><strong>9</strong></div>
+        </div>
+        <div class="usage">
+          <div class="l"><span>Mensajes del mes</span><b>620 / 1.000</b></div>
+          <div class="bar"><i></i></div>
+          <div class="spark" aria-hidden="true"><i style="height:38%"></i><i style="height:52%"></i><i style="height:44%"></i><i class="h" style="height:76%"></i><i style="height:58%"></i><i style="height:66%"></i><i class="h" style="height:92%"></i></div>
+        </div>
+      </div>
+      <div class="phone">
+        <div class="phone-shell"><div class="wa">
+            <div class="wa-status"><span>9:41</span><span aria-hidden="true">●●●</span></div>
+            <div class="wa-top"><svg><use href="#i-back"/></svg><span class="wa-av">N</span><div><b>Clínica Dental Ejemplo</b><small>en línea · asistente activo</small></div></div>
+            <div class="wa-body">
+              <span class="wa-chip">Hoy</span>
+              <div class="bub c">Hola, quisiera una cita para limpieza dental. ¿Tienen horario el sábado?<time>10:02</time></div>
+              <div class="bub a">¡Hola! Con gusto. Estos son los horarios de ejemplo para el sábado:<div class="slots"><span>9:00</span><span class="on">11:30</span><span>14:00</span></div><time>10:02 <svg><use href="#i-ticks"/></svg></time></div>
+              <div class="bub c">El de las 11:30, por favor.<time>10:03</time></div>
+            </div>
+            <div class="wa-input"><span>Mensaje</span><i><svg><use href="#i-send"/></svg></i></div>
+          </div></div>
+      </div>
+      <div class="demo-tag">Datos de demostración</div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <span><svg><use href="#i-chat"/></svg>Asistente de WhatsApp</span>
+    <span><svg><use href="#i-cal"/></svg>Gestión de citas</span>
+    <span><svg><use href="#i-users"/></svg>Seguimiento de pacientes</span>
+    <span><svg><use href="#i-dash"/></svg>Panel administrativo</span>
+    <span><svg><use href="#i-bolt"/></svg>Automatización</span>
+  </div>
+</div>
+
+<!-- PROBLEMAS -->
+<section id="problemas">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow rv">Retos de la clínica</span>
+      <h2 class="rv" style="--d:.06s">¿Te suena <span class="hl">familiar?</span></h2>
+      <p class="rv" style="--d:.12s">Son situaciones habituales en la atención de una clínica odontológica. Amarella está pensada para ayudarte con ellas.</p>
+    </div>
+    <div class="pb">
+      <article class="pbc rv"><span class="pbn"><svg><use href="#i-chat"/></svg></span><h3>Mensajes sin responder</h3><p>Los pacientes escriben fuera de horario o en plena consulta y nadie puede contestar a tiempo.</p><div class="fix"><b>Con Amarella</b>El asistente responde por WhatsApp a cualquier hora con la información de tu clínica.<span class="st st-on">Disponible</span></div></article>
+      <article class="pbc rv" style="--d:.08s"><span class="pbn"><svg><use href="#i-cal"/></svg></span><h3>Agenda difícil de coordinar</h3><p>Agendar, confirmar y reprogramar citas consume tiempo del equipo de recepción.</p><div class="fix"><b>Con Amarella</b>Gestión de citas desde la conversación.<span class="st st-dev">En desarrollo</span></div></article>
+      <article class="pbc rv" style="--d:.16s"><span class="pbn"><svg><use href="#i-users"/></svg></span><h3>Pacientes sin seguimiento</h3><p>Un contacto nuevo o un paciente que no regresa se pierde si nadie le da continuidad.</p><div class="fix"><b>Con Amarella</b>Seguimiento de contactos y continuidad de las conversaciones.<span class="st st-dev">En desarrollo</span></div></article>
+      <article class="pbc rv" style="--d:.24s"><span class="pbn"><svg><use href="#i-dash"/></svg></span><h3>Poca visibilidad de la atención</h3><p>Cuesta saber cuántas conversaciones llegan, qué plan tienes y cuánto has consumido.</p><div class="fix"><b>Con Amarella</b>Un panel con consumo de mensajes, estado de la IA y suscripción.<span class="st st-on">Disponible</span></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow rv">Servicios</span>
+      <h2 class="rv" style="--d:.06s">Una plataforma integral para tu <span class="hl">clínica odontológica.</span></h2>
+      <p class="rv" style="--d:.12s">No es solo un chatbot: Amarella integra la atención por WhatsApp, un panel administrativo y procesos que se encargan de lo repetitivo.</p>
+    </div>
+    <div class="legend rv"><span class="lg"><span class="st st-on">Disponible</span>Funciona hoy</span><span class="lg"><span class="st st-dev">En desarrollo</span>Aún no operativo</span></div>
+    <div class="svc">
+      <article class="card c-a rv">
+        <div class="card-h"><div class="ico"><svg><use href="#i-chat"/></svg></div><span class="st st-on">Disponible</span></div>
+        <h3>Atención inteligente por WhatsApp</h3>
+        <p>Responde a tus pacientes de forma natural, a cualquier hora, con la información que tú configuras.</p>
+        <ul><li>Atención automática</li><li>Respuestas sobre servicios, precios y horarios</li><li>Atención de nuevos pacientes</li><li>Transferencia a un asesor humano</li><li>Conversación natural</li></ul>
+      </article>
+      <article class="card c-b dev rv" style="--d:0.08s">
+        <div class="card-h"><div class="ico"><svg><use href="#i-cal"/></svg></div><span class="st st-dev">En desarrollo</span></div>
+        <h3>Gestión de citas</h3>
+        <p>Organiza la agenda directamente desde la conversación.</p>
+        <ul><li>Agendamiento y consulta de disponibilidad</li><li>Confirmación y cancelaciones</li><li>Recordatorios</li><li>Control de horarios y disponibilidad</li></ul>
+      </article>
+      <article class="card c-c dev rv">
+        <div class="card-h"><div class="ico"><svg><use href="#i-users"/></svg></div><span class="st st-dev">En desarrollo</span></div>
+        <h3>Seguimiento de pacientes</h3>
+        <p>Que ninguna conversación se quede a medias.</p>
+        <ul><li>Seguimiento de nuevos contactos</li><li>Recuperación de oportunidades</li><li>Continuidad de conversaciones</li><li>Atención a pacientes existentes</li></ul>
+      </article>
+      <article class="card c-d rv" style="--d:0.08s">
+        <div class="card-h"><div class="ico"><svg><use href="#i-dash"/></svg></div><span class="st st-on">Disponible</span></div>
+        <h3>Panel administrativo</h3>
+        <p>Una vista clara de tu clínica, tu plan y lo que hace la IA.</p>
+        <ul><li>Control de la cuenta y estadísticas</li><li>Consumo de mensajes</li><li>Estado de la inteligencia artificial</li><li>Servicios, precios y suscripción</li></ul>
+      </article>
+      <article class="card c-e dev rv" style="--d:0.16s">
+        <div class="card-h"><div class="ico"><svg><use href="#i-bolt"/></svg></div><span class="st st-dev">En desarrollo</span></div>
+        <h3>Automatización empresarial</h3>
+        <p>Menos tareas manuales y una atención centralizada.</p>
+        <ul><li>Optimización de procesos</li><li>Reducción de tareas manuales</li><li>Centralización de la atención</li><li>Mejor organización de la clínica</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- DEMOSTRACIÓN -->
+<section id="demo" class="tint">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow rv">Demostración</span>
+      <h2 class="rv" style="--d:.06s">Así se ve Amarella <span class="hl">en acción.</span></h2>
+      <p class="rv" style="--d:.12s">Tres momentos de ejemplo: la conversación, la cita y el control de la cuenta.</p>
+    </div>
+    <div class="demo">
+      <figure class="rv">
+        <div class="frame"><span class="demo-badge">Demostración</span>
+          <div class="mini">
+          <div class="phone-shell"><div class="wa">
+            <div class="wa-status"><span>9:41</span><span aria-hidden="true">●●●</span></div>
+            <div class="wa-top"><svg><use href="#i-back"/></svg><span class="wa-av">N</span><div><b>Clínica Dental Ejemplo</b><small>en línea · asistente activo</small></div></div>
+            <div class="wa-body">
+              <span class="wa-chip">Hoy</span>
+              <div class="bub c">Hola, ¿qué tratamientos ofrecen y cuál es su horario?<time>09:14</time></div>
+              <div class="bub a">¡Bienvenido a la clínica! Te comparto los servicios y horarios configurados. ¿Sobre cuál quieres saber más?<time>09:14 <svg><use href="#i-ticks"/></svg></time></div>
+              <div class="bub c">Una limpieza dental.<time>09:15</time></div>
+              <div class="bub a">Con gusto. Si prefieres hablar con una persona, te paso con un asesor de la clínica.<time>09:15 <svg><use href="#i-ticks"/></svg></time></div>
+            </div>
+            <div class="wa-input"><span>Mensaje</span><i><svg><use href="#i-send"/></svg></i></div>
+          </div></div>
+          </div>
+        </div>
+        <figcaption><b>El asistente responde</b><span>Información de la clínica, en tono natural y con paso a un asesor.</span></figcaption>
+      </figure>
+      <figure class="rv" style="--d:.1s">
+        <div class="frame"><span class="demo-badge">Demostración</span>
+          <div class="appt">
+            <div class="ap-h"><span class="wa-av">PE</span><div><b>Paciente de ejemplo</b><small>Solicitud por WhatsApp</small></div></div>
+            <div class="ap-lbl">Día</div>
+            <div class="days"><span>Lun<b>9</b></span><span>Mar<b>10</b></span><span>Mié<b>11</b></span><span>Jue<b>12</b></span><span>Vie<b>13</b></span><span class="on">Sáb<b>14</b></span></div>
+            <div class="ap-lbl">Horario</div>
+            <div class="ap-slots"><span>9:00</span><span class="on">11:30</span><span>14:00</span></div>
+            <div class="ap-rows"><div><span>Servicio</span><b>Limpieza dental</b></div><div><span>Canal</span><b>WhatsApp</b></div></div>
+            <div class="ok"><svg><use href="#i-check"/></svg>Cita confirmada al paciente</div>
+          </div>
+        </div>
+        <figcaption><b>Una solicitud de agendamiento</b><span>Representación del flujo previsto para la gestión de citas.</span></figcaption>
+      </figure>
+      <figure class="rv" style="--d:.2s">
+        <div class="frame"><span class="demo-badge">Demostración</span>
+          <div class="appt">
+            <div class="dh"><div><b>Tu cuenta</b><small>Plan Profesional</small></div><span class="pill">IA activa</span></div>
+            <div class="gauge">
+              <div class="ring"><svg viewBox="0 0 104 104" aria-hidden="true"><circle class="tr" cx="52" cy="52" r="42"/><circle class="pg" cx="52" cy="52" r="42"/></svg><div><strong>62%</strong><small>del plan</small></div></div>
+              <div class="gl"><span>Consumidos<b>620</b></span><span>Disponibles<b>380</b></span></div>
+            </div>
+            <div class="row2"><span>Estado de la IA</span><b>Activa</b></div>
+            <div class="row2"><span>Vencimiento</span><b>en 18 días</b></div>
+            <div class="bars" style="height:86px;margin-top:14px" aria-hidden="true"><div><i style="height:30px"></i></div><div><i style="height:44px"></i></div><div><i class="h" style="height:62px"></i></div><div><i style="height:40px"></i></div><div><i style="height:52px"></i></div><div><i class="h" style="height:72px"></i></div></div>
+          </div>
+        </div>
+        <figcaption><b>Consumo y estado de la IA</b><span>Mensajes del mes, plan contratado y estado del asistente de tu clínica.</span></figcaption>
+      </figure>
+    </div>
+    <p class="demo-note rv">Todas las pantallas muestran información de demostración. No son clientes reales ni resultados.</p>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section id="proceso">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow rv">Cómo funciona</span>
+      <h2 class="rv" style="--d:.06s">De tu clínica a tu asistente, <span class="hl">en tres pasos.</span></h2>
+    </div>
+    <div class="steps">
+      <div class="step rv"><div class="step-top"><div class="num">1</div><div class="line"></div></div><div class="sico"><svg><use href="#i-plug"/></svg></div><h3>Conectamos tu clínica</h3><p>Vinculamos tu canal de WhatsApp y registramos tu clínica con su propia cuenta y sus propios datos.</p><span class="tagline">Conexión</span></div>
+      <div class="step rv" style="--d:.1s"><div class="step-top"><div class="num">2</div><div class="line"></div></div><div class="sico"><svg><use href="#i-sliders"/></svg></div><h3>Configuramos tu asistente inteligente</h3><p>Definimos nombre, tono, tratamientos, precios, horarios e instrucciones para que responda como tu equipo.</p><span class="tagline">Configuración</span></div>
+      <div class="step rv" style="--d:.2s"><div class="step-top"><div class="num">3</div></div><div class="sico"><svg><use href="#i-chat"/></svg></div><h3>Amarella gestiona la atención</h3><p>El asistente atiende las conversaciones y los procesos habilitados, y tú lo supervisas desde tu panel.</p><span class="tagline">En marcha</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PANEL -->
+<section id="panel" class="tint">
+  <div class="wrap pnl">
+    <div>
+      <span class="eyebrow rv">Panel de clientes</span>
+      <h2 class="rv" style="margin:16px 0 18px;--d:.06s">Tu cuenta, <span class="hl">siempre bajo control.</span></h2>
+      <p class="lead rv" style="--d:.12s">Cada clínica entra a su propio panel y ve únicamente su información.</p>
+      <ul class="feat">
+        <li class="rv"><span class="ico"><svg><use href="#i-card"/></svg></span><div><b>Plan contratado</b><span>Estado, inicio y vencimiento de tu suscripción.</span></div></li>
+        <li class="rv"><span class="ico"><svg><use href="#i-chart"/></svg></span><div><b>Mensajes consumidos y disponibles</b><span>Sigue el consumo del mes y los avisos de límite.</span></div></li>
+        <li class="rv"><span class="ico"><svg><use href="#i-bolt"/></svg></span><div><b>Estado de la IA</b><span>Actívala o desactívala cuando lo necesites.</span></div></li>
+        <li class="rv"><span class="ico"><svg><use href="#i-gear"/></svg></span><div><b>Servicios y gestión de la cuenta</b><span>Edita tus servicios, precios y datos de la clínica.</span></div></li>
+      </ul>
+    </div>
+    <div class="rv" style="--d:.15s">
+      <div class="big" role="img" aria-label="Ejemplo de panel de cliente con datos de demostración">
+        <div class="big-top"><i></i><i></i><i></i><em>Panel de ejemplo · datos de demostración</em></div>
+        <div class="tabs" aria-hidden="true"><span class="on">Resumen</span><span>Conversaciones</span><span>Servicios</span><span>Plan</span></div>
+        <div class="main">
+          <div class="g2">
+            <div class="box"><small>Consumo mensual</small>
+              <div class="gauge" style="margin:0">
+                <div class="ring"><svg viewBox="0 0 104 104" aria-hidden="true"><circle class="tr" cx="52" cy="52" r="42"/><circle class="pg" cx="52" cy="52" r="42"/></svg><div><strong>62%</strong><small>del plan</small></div></div>
+                <div class="gl"><span>Consumidos<b>620</b></span><span>Disponibles<b>380</b></span></div>
+              </div>
+            </div>
+            <div class="box"><small>Asistente de IA</small>
+              <div class="iastate"><span class="dot"></span>Activo<span class="sw" aria-hidden="true"></span></div>
+              <div class="row2" style="margin-top:16px"><span>Plan</span><b>Profesional</b></div>
+              <div class="row2"><span>Vence en</span><b>18 días</b></div>
+            </div>
+          </div>
+          <div class="g2 b">
+            <div class="box"><small>Mensajes por día · ejemplo</small>
+              <div class="bars" aria-hidden="true"><div><i style="height:37px"></i><span>L</span></div><div><i style="height:53px"></i><span>M</span></div><div><i style="height:42px"></i><span>X</span></div><div><i class="h" style="height:75px"></i><span>J</span></div><div><i style="height:59px"></i><span>V</span></div><div><i class="h" style="height:88px"></i><span>S</span></div><div><i style="height:31px"></i><span>D</span></div></div>
+            </div>
+            <div class="box"><small>Servicios</small>
+              <div class="svc-row"><span>Servicio 1</span><b>Precio</b></div>
+              <div class="svc-row"><span>Servicio 2</span><b>Precio</b></div>
+              <div class="svc-row"><span>Servicio 3</span><b>Precio</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANES -->
+<section id="planes">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow rv">Planes</span>
+      <h2 class="rv" style="--d:.06s">Un plan para cada <span class="hl">etapa de tu clínica.</span></h2>
+      <p class="rv" style="--d:.12s">Cada plan incluye un límite mensual de mensajes. Los precios se acuerdan según tu clínica.</p>
+    </div>
+    <div class="plans">
+      <article class="plan rv">
+        <div class="plan-h"><h3>Básico</h3></div>
+        <p class="desc">Para clínicas que empiezan a automatizar su atención.</p>
+        <div class="price">A consultar</div><div class="price-n">Precio según tu clínica</div>
+        <div class="incl">Incluye</div>
+        <ul><li><svg><use href="#i-check"/></svg>Asistente de WhatsApp</li><li><svg><use href="#i-check"/></svg>Panel de cliente</li><li><svg><use href="#i-check"/></svg>Límite mensual de mensajes</li></ul>
+        <a class="btn btn-o" href="#contacto">Consultar plan</a>
+      </article>
+      <article class="plan rec rv" style="--d:0.1s">
+        <div class="plan-h"><h3>Profesional</h3><span class="badge">Recomendado</span></div>
+        <p class="desc">Para clínicas con mayor volumen de conversaciones.</p>
+        <div class="price">A consultar</div><div class="price-n">Precio según tu clínica</div>
+        <div class="incl">Incluye</div>
+        <ul><li><svg><use href="#i-check"/></svg>Todo lo del plan Básico</li><li><svg><use href="#i-check"/></svg>Más mensajes al mes</li><li><svg><use href="#i-check"/></svg>Avisos por correo y WhatsApp</li></ul>
+        <a class="btn btn-k" href="#contacto" data-cta>Solicitar demostración <svg><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="plan rv" style="--d:0.2s">
+        <div class="plan-h"><h3>A medida</h3></div>
+        <p class="desc">Para clínicas con varias sedes o necesidades especiales.</p>
+        <div class="price">A consultar</div><div class="price-n">Condiciones acordadas contigo</div>
+        <div class="incl">Incluye</div>
+        <ul><li><svg><use href="#i-check"/></svg>Configuración personalizada</li><li><svg><use href="#i-check"/></svg>Acompañamiento directo</li><li><svg><use href="#i-check"/></svg>Límites acordados contigo</li></ul>
+        <a class="btn btn-o" href="#contacto">Hablar con nosotros</a>
+      </article>
+    </div>
+    <p class="plans-note rv">El límite de mensajes y las condiciones de cada plan se confirman al contratar.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="tint">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow rv">Preguntas frecuentes</span>
+      <h2 class="rv" style="--d:.06s">Resolvemos tus <span class="hl">dudas.</span></h2>
+    </div>
+    <div class="faq rv" id="faqList">
+      <div class="qa open"><button aria-expanded="true"><span>¿Cómo funciona el asistente?</span><i class="pm"></i></button><div class="body"><div><p>Recibe los mensajes de tus pacientes por WhatsApp y responde con la información de tu clínica: servicios, precios y horarios. Cuando hace falta, pasa la conversación a una persona de tu equipo.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false"><span>¿Cómo se conecta mi WhatsApp?</span><i class="pm"></i></button><div class="body"><div><p>Nos encargamos de la conexión durante la configuración inicial. Te indicaremos qué necesitamos de tu parte al contactarnos.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false"><span>¿Puede agendar citas?</span><i class="pm"></i></button><div class="body"><div><p>La gestión de citas está en desarrollo. Escríbenos y te contamos el estado actual y qué parte puedes usar hoy.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false"><span>¿Qué incluyen los planes?</span><i class="pm"></i></button><div class="body"><div><p>Cada plan tiene un límite mensual de mensajes y acceso a tu panel. Los precios y condiciones se acuerdan según tu clínica.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false"><span>¿Qué pasa si llego al límite de mensajes o vence mi plan?</span><i class="pm"></i></button><div class="body"><div><p>Recibes avisos antes de que ocurra, por correo y por WhatsApp, para que puedas renovar a tiempo.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false"><span>¿Puedo cambiar mis servicios, precios o apagar la IA?</span><i class="pm"></i></button><div class="body"><div><p>Sí. Desde tu panel puedes editar servicios, precios y horarios de tu clínica, y activar o desactivar el asistente cuando quieras.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false"><span>¿Se mezclan los datos entre clínicas?</span><i class="pm"></i></button><div class="body"><div><p>No. Cada clínica tiene su propia cuenta, configuración y conversaciones, separadas de las demás.</p></div></div></div>
+      <div class="qa"><button aria-expanded="false"><span>¿Qué soporte recibo?</span><i class="pm"></i></button><div class="body"><div><p>Te acompañamos en la configuración y en el uso del panel. Los canales y horarios de soporte se confirmarán al contratar.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <span class="eyebrow">Demostración</span>
+    <h2>Descubre cómo sería Amarella <em>en tu clínica.</em></h2>
+    <p>Cuéntanos cómo trabaja tu clínica y te mostramos la plataforma en una demostración.</p>
+    <div class="actions">
+      <a class="btn btn-k" href="#contacto" data-cta="main">Solicitar una demostración <svg><use href="#i-arrow"/></svg></a>
+      <a class="btn btn-o" href="#planes">Ver los planes</a>
+    </div>
+    <!-- PENDIENTE: añadir aquí WhatsApp y correo reales de Amarella Studio CO. -->
+    <div class="pending" id="pending">Canales de contacto: pendientes de añadir</div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="year">2026</span> Amarella Studio CO. · Plataforma para clínicas odontológicas.</span>
+    <nav aria-label="Pie"><a href="#servicios">Plataforma</a><a href="#planes">Planes</a><a href="#faq">Preguntas</a><a href="#contacto">Contacto</a></nav>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var d=document, root=d.documentElement;
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduce) root.classList.add('js');
+  d.getElementById('year').textContent=new Date().getFullYear();
+
+  /* Canales de contacto reales: completar cuando existan. Mientras estén vacíos, los botones llevan a la sección de contacto. */
+  var CONTACT={whatsapp:'',email:''};
+  (function(){
+    var wa=(CONTACT.whatsapp||'').replace(/\D/g,''), mail=(CONTACT.email||'').trim();
+    var msg='Hola, quisiera solicitar una demostración de Amarella para mi clínica odontológica.';
+    var href=wa?('https://wa.me/'+wa+'?text='+encodeURIComponent(msg)):(mail?('mailto:'+mail+'?subject='+encodeURIComponent('Solicitud de demostración')+'&body='+encodeURIComponent(msg)):'');
+    if(!href) return;
+    d.querySelectorAll('[data-cta]').forEach(function(a){a.setAttribute('href',href);if(href.indexOf('http')===0){a.target='_blank';a.rel='noopener'}});
+    var p=d.getElementById('pending'); if(p){ var t=[]; if(wa)t.push('WhatsApp: +'+wa); if(mail)t.push('Correo: '+mail); p.textContent=t.join('  ·  '); p.style.borderStyle='solid'; }
+  })();
+
+
+  var nav=d.getElementById('nav');
+  function onScroll(){nav.classList.toggle('scrolled',window.scrollY>8)}
+  onScroll(); window.addEventListener('scroll',onScroll,{passive:true});
+
+  var burger=d.getElementById('burger'), menu=d.getElementById('menu');
+  function setMenu(o){menu.classList.toggle('open',o);burger.setAttribute('aria-expanded',o);burger.setAttribute('aria-label',o?'Cerrar menú':'Abrir menú')}
+  burger.addEventListener('click',function(){setMenu(!menu.classList.contains('open'))});
+  menu.addEventListener('click',function(e){if(e.target.closest('a'))setMenu(false)});
+  d.addEventListener('keydown',function(e){if(e.key==='Escape')setMenu(false)});
+  window.addEventListener('resize',function(){if(window.innerWidth>860)setMenu(false)});
+
+  d.querySelectorAll('.qa button').forEach(function(b){
+    b.addEventListener('click',function(){
+      var item=b.parentElement, open=!item.classList.contains('open');
+      item.classList.toggle('open',open); b.setAttribute('aria-expanded',open);
+    });
+  });
+
+  var els=d.querySelectorAll('.rv');
+  if(!reduce && 'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(el){io.observe(el)});
+  } else { els.forEach(function(el){el.classList.add('in')}); }
+})();
+</script>
+</body>
+</html>
