@@ -125,10 +125,6 @@ p{margin:0}
 .demo-tag{position:absolute;z-index:6;right:0;top:-14px;background:var(--y);color:var(--k);border-radius:99px;padding:6px 14px;font-size:.7rem;font-weight:800;letter-spacing:.04em}
 
 /* franja */
-.strip{background:var(--y);color:var(--k);padding-block:0}
-.strip .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 26px;padding-block:18px;font-size:.88rem;font-weight:800}
-.strip span{display:inline-flex;align-items:center;gap:9px}
-.strip svg{width:18px;height:18px}
 
 /* teléfono */
 .phone-shell{background:#000;border-radius:40px;padding:9px;box-shadow:0 36px 60px -26px rgba(0,0,0,.7),inset 0 0 0 1.5px #2e2e2e;position:relative}
@@ -171,45 +167,10 @@ p{margin:0}
 .l b{color:var(--ink)}
 
 /* retos */
-.pbx{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:28px;align-items:start}
-.pgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.pt{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;gap:16px;align-items:flex-start;box-shadow:var(--sh-1);transition:transform .3s var(--ease),border-color .3s,box-shadow .3s;min-width:0}
-.pt:hover{transform:translateY(-3px);border-color:var(--k);box-shadow:var(--sh-2)}
-.pt .ic{width:44px;height:44px;border-radius:12px;background:var(--y-tint);display:grid;place-items:center;flex:none}
-.pt .ic svg{width:22px;height:22px}
-.pt h3{font-size:1rem;margin-bottom:4px}
-.pt p{font-size:.9rem;color:var(--mute);line-height:1.5}
-.sol{background:var(--k);color:var(--white);border-radius:var(--r-lg);padding:32px;position:sticky;top:96px;overflow:hidden}
-.sol::after{content:"";position:absolute;right:-60px;top:-60px;width:180px;height:180px;border-radius:50%;border:1.5px solid rgba(255,196,0,.25)}
-.sol h3{font-size:1.35rem;margin:14px 0 8px}
-.sol>p{color:var(--mute-d);font-size:.95rem}
-.sol ul{list-style:none;margin:22px 0 26px;padding:0;display:grid;gap:0}
-.sol li{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 0;border-top:1px solid var(--line-d);font-size:.92rem;font-weight:600}
-.sol .btn{width:100%}
 
 /* servicios */
-.svc{display:grid;grid-template-columns:repeat(6,1fr);gap:20px}
-.card{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px;box-shadow:var(--sh-1);transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .3s;min-width:0;display:flex;flex-direction:column}
-.card:hover{transform:translateY(-4px);box-shadow:var(--sh-2);border-color:var(--k)}
-.card-h{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:22px;flex-wrap:wrap}
-.card-h .tags{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
 .ico{width:52px;height:52px;border-radius:15px;background:var(--k);color:var(--y);display:grid;place-items:center;flex:none;transition:background .3s,color .3s}
 .ico svg{width:25px;height:25px}
-.card:hover .ico{background:var(--y);color:var(--k)}
-.card p{color:var(--mute);margin-top:8px;font-size:.94rem}
-.card ul{list-style:none;margin:20px 0 0;padding:18px 0 0;border-top:1px solid var(--line);display:grid;gap:9px;font-size:.9rem;font-weight:500}
-.card li{display:flex;gap:11px;align-items:flex-start}
-.card li::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--y);margin-top:.6em;box-shadow:0 0 0 3px var(--y-tint)}
-.card.dev li{color:var(--mute)}
-.card.dev li::before{background:transparent;box-shadow:none;border:1.5px solid var(--soft);width:8px;height:8px}
-.card.dev .ico{background:var(--paper);color:var(--k);border:1px solid var(--line)}
-.c1,.c2,.c3{grid-column:span 2}.c4{grid-column:span 3}.c5{grid-column:span 3}
-.c4{background:var(--k);color:var(--white);border-color:var(--k)}
-.c4 p{color:var(--mute-d)}.c4 ul{border-color:var(--line-d)}.c4 li::before{box-shadow:0 0 0 3px rgba(255,196,0,.18)}
-.c4 .ico{background:var(--y);color:var(--k)}
-.c4:hover{border-color:var(--y)}
-.legend{display:flex;flex-wrap:wrap;gap:10px 22px;margin-bottom:30px;font-size:.84rem;font-weight:600;color:var(--mute);align-items:center}
-.legend .lg{display:inline-flex;align-items:center;gap:9px}
 
 /* demo interactiva */
 .dm{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:center}
@@ -308,27 +269,8 @@ tr:last-child td{border-bottom:0}
 #panel .actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:34px}
 
 /* proceso */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative}
-.step{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px;box-shadow:var(--sh-1);position:relative;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .3s;min-width:0}
-.step:hover{transform:translateY(-4px);box-shadow:var(--sh-2);border-color:var(--k)}
-.step-top{display:flex;align-items:center;margin-bottom:24px;margin-right:-30px}
-.num{width:56px;height:56px;border-radius:50%;background:var(--k);color:var(--y);font-weight:800;font-size:1.25rem;display:grid;place-items:center;flex:none;box-shadow:0 0 0 6px var(--y);position:relative;z-index:1}
-.ln{flex:1;height:2px;margin-left:12px;background:repeating-linear-gradient(90deg,var(--k) 0 7px,transparent 7px 14px);opacity:.3;position:relative}
-.ln::after{content:"";position:absolute;right:-1px;top:-4px;width:9px;height:9px;border-top:2px solid var(--k);border-right:2px solid var(--k);transform:rotate(45deg)}
-.step:last-child .step-top{margin-right:0}.step:last-child .ln{display:none}
-.sico{position:absolute;top:30px;right:28px;width:46px;height:46px;border-radius:13px;background:var(--y-tint);display:grid;place-items:center}
-.sico svg{width:23px;height:23px}
-.step p{color:var(--mute);margin-top:10px;font-size:.94rem}
 
 /* confianza */
-.sc{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.scc{border:1px solid var(--line);border-radius:var(--r-lg);padding:28px;background:var(--white);box-shadow:var(--sh-1);display:flex;flex-direction:column;gap:12px;min-width:0;transition:transform .35s var(--ease),border-color .3s,box-shadow .35s}
-.scc:hover{transform:translateY(-4px);border-color:var(--k);box-shadow:var(--sh-2)}
-.scc .ex{align-self:flex-start;font-size:.64rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:var(--y-tint);border:1px solid var(--y-line);padding:5px 10px;border-radius:99px}
-.scc p{color:var(--mute);font-size:.93rem}
-.scc .res{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);font-size:.86rem;font-weight:600}
-.scc .res b{display:block;font-size:.64rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);margin-bottom:4px}
-.trust-note{margin-top:26px;text-align:center;font-size:.84rem;color:var(--soft);font-weight:600}
 
 /* planes */
 .plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:stretch;max-width:980px;margin:0 auto}
@@ -358,30 +300,7 @@ tr:last-child td{border-bottom:0}
 .plans-note{margin-top:26px;text-align:center;color:var(--soft);font-size:.86rem;font-weight:600}
 
 /* por qué */
-.why{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:20px;align-items:stretch;max-width:1080px;margin:0 auto}
-.why-l{display:grid;gap:14px}
-.why-l .wc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px 24px;align-items:start;padding:22px 24px}
-.why-l .wc .wk,.why-l .wc h3,.why-l .wc>p{grid-column:1}
-.why-l .wc .wn{grid-column:2;grid-row:1/span 3;margin:0;padding:0 0 0 22px;border-top:0;border-left:1px solid var(--line);align-self:stretch}
-.wc{border:1px solid var(--line);border-radius:var(--r-lg);padding:26px;background:var(--white);display:flex;flex-direction:column;gap:10px;min-width:0}
-.wc .wk{font-size:.64rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--soft)}
-.wc h3{font-size:1.06rem}
-.wc p{color:var(--mute);font-size:.9rem}
-.wn{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-size:.86rem;color:var(--mute)}
-.wn b{display:block;font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);margin-bottom:4px}
-.wc.am{background:var(--k);color:var(--white);border-color:var(--k);box-shadow:0 30px 60px -30px rgba(0,0,0,.6);padding:28px}
-.wc.am .wk{color:var(--y)}.wc.am h3{font-size:1.2rem}.wc.am p{color:var(--mute-d)}
-.wc.am ul{list-style:none;margin:8px 0 0;padding:14px 0 0;border-top:1px solid var(--line-d);display:grid;gap:9px;font-size:.86rem;font-weight:600}
-.wc.am li{display:flex;gap:10px;align-items:flex-start}
-.wc.am li::before{content:"";flex:none;width:16px;height:16px;border-radius:50%;margin-top:2px;background:var(--y) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3.2 3.2L15 6.8' fill='none' stroke='%230B0B0B' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/11px no-repeat}
-.why-note{margin-top:24px;text-align:center;font-size:.82rem;color:var(--soft);font-weight:600}
 /* gancho */
-.hook-s{padding-block:0 104px}
-.hook{background:var(--k);color:var(--white);border-radius:28px;padding:48px 52px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:36px;align-items:center;position:relative;overflow:hidden}
-.hook::after{content:"";position:absolute;right:-90px;bottom:-140px;width:320px;height:320px;border-radius:50%;border:1.5px solid rgba(255,196,0,.22)}
-.hook h2{font-size:clamp(1.55rem,2.8vw,2.15rem);margin:14px 0 12px;max-width:26ch}
-.hook p{color:var(--mute-d);max-width:56ch}
-.hook .btn{position:relative;z-index:1}
 /* precios */
 .pz{display:flex;align-items:flex-start;gap:6px;margin:26px 0 0;line-height:1}
 .pz .cur{font-size:1.5rem;font-weight:800;margin-top:6px}
@@ -432,6 +351,70 @@ tr:last-child td{border-bottom:0}
 .zrows div:first-child{border-top:0}.zrows span{color:var(--mute)}
 .zm figcaption{padding:14px 6px 4px;font-size:.86rem;color:var(--mute-d)}
 .zm figcaption b{display:block;color:var(--white);font-size:.98rem;margin-bottom:2px}
+/* accesibilidad */
+.skip{position:fixed;left:16px;top:-60px;z-index:100;background:var(--y);color:var(--k);font-weight:800;padding:10px 16px;border-radius:10px;transition:top .2s}
+.skip:focus{top:12px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* problemas y solución */
+.ps{max-width:1000px;margin:0 auto;display:grid;gap:12px}
+.ps-h{display:grid;grid-template-columns:minmax(0,1fr) 56px minmax(0,1fr);font-size:.66rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);padding:0 24px 4px}
+.ps-r{display:grid;grid-template-columns:minmax(0,1fr) 56px minmax(0,1fr);align-items:stretch;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:var(--white);transition:border-color .3s,box-shadow .3s}
+.ps-r:hover{border-color:var(--k);box-shadow:var(--sh-1)}
+.ps-p{display:flex;gap:16px;align-items:flex-start;padding:22px 24px}
+.ps-p .ic{width:44px;height:44px;border-radius:12px;background:var(--paper);display:grid;place-items:center;flex:none}
+.ps-p .ic svg{width:22px;height:22px}
+.ps h3{font-size:1rem;margin-bottom:3px}
+.ps p{font-size:.9rem;color:var(--mute);line-height:1.5}
+.ps-a{display:grid;place-items:center;background:var(--paper)}
+.ps-a svg{width:20px;height:20px;padding:6px;box-sizing:content-box;border-radius:50%;background:var(--y);color:var(--k)}
+.ps-s{padding:22px 24px;background:var(--k);color:var(--white)}
+.ps-s h3{color:var(--y)}.ps-s p{color:var(--mute-d)}
+/* funcionalidades */
+.fx{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:start}
+.fx-l h2{margin:16px 0 16px}
+.fx-l{position:sticky;top:110px}
+.dev{margin-top:28px;padding:16px 18px;border:1.5px dashed var(--line-2);border-radius:var(--r);display:grid;gap:8px;background:var(--white)}
+.dev .st{justify-self:start}.dev p{font-size:.86rem;color:var(--mute)}
+.fx-g{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-1)}
+.fx-g li{display:flex;gap:16px;align-items:flex-start;padding:28px 26px;border-bottom:1px solid var(--line);transition:background .3s}
+.fx-g li:nth-child(odd){border-right:1px solid var(--line)}
+.fx-g li:nth-last-child(-n+2){border-bottom:0}
+.fx-g li:hover{background:var(--y-tint)}
+.fx-g .ic{width:46px;height:46px;border-radius:13px;background:var(--k);color:var(--y);display:grid;place-items:center;flex:none;transition:background .3s,color .3s}
+.fx-g li:hover .ic{background:var(--y);color:var(--k)}
+.fx-g .ic svg{width:22px;height:22px}
+.fx-g h3{font-size:1.02rem;margin-bottom:4px}
+.fx-g p{font-size:.9rem;color:var(--mute);line-height:1.5}
+/* demo: entrada */
+.wa-form input{flex:1;min-width:0;background:var(--white);border:1px solid var(--line);border-radius:99px;padding:8px 13px;font-size:.74rem;color:var(--ink)}
+.wa-form input:focus{outline:none;border-color:var(--k);box-shadow:0 0 0 3px var(--y-tint)}
+.wa-form input:disabled{opacity:.6}
+.wa-form button{width:32px;height:32px;border-radius:50%;background:var(--k);color:var(--y);border:0;display:grid;place-items:center;flex:none}
+.wa-form button svg{width:14px;height:14px}
+/* implementación */
+.flow{list-style:none;margin:0 auto;padding:0;max-width:1000px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;position:relative}
+.flow::before{content:"";position:absolute;top:44px;left:calc(100%/6);right:calc(100%/6);height:2px;background:linear-gradient(90deg,var(--y),var(--k));z-index:0}
+.fl-i{text-align:center;display:grid;justify-items:center;gap:8px;position:relative;z-index:1;min-width:0}
+.fl-n{position:relative;margin-bottom:14px}
+.fl-c{width:88px;height:88px;border-radius:50%;background:var(--k);color:var(--y);display:grid;place-items:center;box-shadow:0 0 0 8px var(--white),0 0 0 9px var(--line);transition:transform .35s var(--ease)}
+.fl-i:hover .fl-c{transform:translateY(-4px)}
+.fl-c svg{width:34px;height:34px}
+.fl-k{position:absolute;right:-6px;top:-6px;width:30px;height:30px;border-radius:50%;background:var(--y);color:var(--k);font-weight:800;font-size:.86rem;display:grid;place-items:center;box-shadow:0 0 0 4px var(--white)}
+.fl-i h3{font-size:1.1rem}
+.fl-i p{color:var(--mute);font-size:.94rem;max-width:30ch}
+/* cierre */
+.close{background:var(--y);color:var(--k);border-radius:30px;padding:60px 64px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:40px;align-items:center;position:relative;overflow:hidden;text-align:left}
+.close::after{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;border:2px solid rgba(13,13,13,.12)}
+.close .eyebrow::before{background:var(--k)}
+.close h2{font-size:clamp(2rem,4.2vw,3.1rem);margin:16px 0 14px;max-width:16ch;color:var(--k)}
+.contact .close p{color:rgba(13,13,13,.8);font-size:1.06rem;max-width:44ch}
+.contact .close h2{max-width:16ch}
+.close-a{display:grid;gap:12px;position:relative;z-index:1}
+.close-a .btn{width:100%}
+.close .btn-o{border-color:var(--k);color:var(--k)}
+.close .btn-o:hover{background:var(--k);color:var(--y)}
+.close .chan{color:rgba(13,13,13,.7);text-align:center}
+.contact .wrap{display:block}
 /* faq */
 .faq{max-width:840px;margin:0 auto;background:var(--white);border:1px solid var(--line);border-radius:22px;box-shadow:var(--sh-1);overflow:hidden}
 .qa{border-bottom:1px solid var(--line);position:relative;transition:background .3s}
@@ -515,27 +498,17 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
   .hero .wrap{grid-template-columns:minmax(0,1fr);gap:56px}
   .hero{padding-top:124px}
   .stage{max-width:620px;width:100%;margin-inline:auto}
-  .pbx{grid-template-columns:minmax(0,1fr)}.sol{position:static}
-  .svc{grid-template-columns:repeat(2,1fr)}
-  .c1,.c2,.c3,.c4,.c5{grid-column:auto}.c5{grid-column:1/-1}
+  .mini-dash{right:0}
   .dm{grid-template-columns:minmax(0,1fr);gap:56px}
   .app-body{grid-template-columns:minmax(0,1fr)}
   .side{flex-direction:row;overflow-x:auto;border-right:0;border-bottom:1px solid var(--line);padding:10px;gap:6px;scrollbar-width:none}
   .side::-webkit-scrollbar{display:none}
   .side .sb,.side .acc{display:none}
   .side button{white-space:nowrap;width:auto;flex:none}
-  .steps{grid-template-columns:minmax(0,1fr);max-width:600px;margin-inline:auto;gap:18px}
-  .steps::before{content:"";position:absolute;left:58px;top:56px;bottom:56px;width:2px;background:repeating-linear-gradient(180deg,var(--k) 0 7px,transparent 7px 14px);opacity:.28}
-  .step{padding:26px 26px 26px 100px}
-  .step-top{position:absolute;left:30px;top:26px;margin:0}.step-top .ln{display:none}
-  .sico{top:26px;right:22px}
-  .step h3{padding-right:56px}
-  .sc{grid-template-columns:minmax(0,1fr);max-width:620px;margin-inline:auto}
-  .why{grid-template-columns:minmax(0,1fr);max-width:640px}
   .trial{grid-template-columns:minmax(0,1fr)}
+  .fx{grid-template-columns:minmax(0,1fr);gap:40px}.fx-l{position:static}
+  .close{grid-template-columns:minmax(0,1fr);padding:48px}
   .zooms{grid-template-columns:minmax(0,1fr);max-width:560px;margin-inline:auto}
-  .wc.am ul{grid-template-columns:1fr 1fr;column-gap:24px}
-  .hook{grid-template-columns:minmax(0,1fr);padding:40px}
 }
 @media(max-width:900px){
   .burger{display:grid}
@@ -561,11 +534,6 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
   .phone{position:relative;left:auto;bottom:auto;width:100%;max-width:280px;margin:-70px auto 0;order:2;animation:none}
   .mini-dash{position:relative;right:auto;bottom:auto;width:100%;max-width:none;margin-top:16px;order:3}
   .demo-tag{right:12px;top:-10px}
-  .strip .wrap{justify-content:flex-start;padding-block:14px}
-  .pgrid{grid-template-columns:minmax(0,1fr)}
-  .sol{padding:26px}
-  .svc{grid-template-columns:minmax(0,1fr)}.c5{grid-column:auto}
-  .card{padding:26px}
   .dm-phone .wa-body{height:300px}
   .kpis{grid-template-columns:1fr 1fr}
   .r2,.conv{grid-template-columns:minmax(0,1fr)}
@@ -579,19 +547,23 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
   .cmp td{white-space:normal}
   .cmp td,.cmp th{padding-right:6px;font-size:.76rem}
   .cmp .st{font-size:.5rem;padding:3px 6px;letter-spacing:.03em}
-  .step{padding:24px 22px 24px 84px}.step-top{left:20px;top:22px}
-  .num{width:46px;height:46px;font-size:1.05rem;box-shadow:0 0 0 5px var(--y)}
-  .steps::before{left:43px;top:46px;bottom:46px}
-  .sico{width:40px;height:40px;top:22px;right:18px}.sico svg{width:20px;height:20px}
   .plan{padding:30px 24px}
-  .why-l .wc{grid-template-columns:minmax(0,1fr)}
-  .why-l .wc .wn{grid-column:1;grid-row:auto;padding:12px 0 0;border-left:0;border-top:1px solid var(--line);margin-top:6px}
-  .wc.am ul{grid-template-columns:minmax(0,1fr)}
-  .hook-s{padding-block:0 64px}
   .trial{padding:22px 20px}
+  .ps-h{display:none}
+  .ps-r{grid-template-columns:minmax(0,1fr)}
+  .ps-a{padding:8px 0}.ps-a svg{transform:rotate(90deg)}
+  .ps-p,.ps-s{padding:20px}
+  .fx-g{grid-template-columns:minmax(0,1fr)}
+  .fx-g li:nth-child(odd){border-right:0}
+  .fx-g li:nth-last-child(2){border-bottom:1px solid var(--line)}
+  .fx-g li{padding:22px 20px}
+  .flow{grid-template-columns:minmax(0,1fr);gap:28px;max-width:420px}
+  .flow::before{top:44px;bottom:44px;left:43px;right:auto;width:2px;height:auto;background:linear-gradient(180deg,var(--y),var(--k))}
+  .fl-i{grid-template-columns:88px minmax(0,1fr);justify-items:start;text-align:left;column-gap:20px;row-gap:4px;align-items:center}
+  .fl-n{grid-row:1/span 2;margin:0}
+  .fl-i h3{align-self:end}.fl-i p{align-self:start}
+  .close{padding:34px 22px;border-radius:24px}
   .trial-s{grid-template-columns:minmax(0,1fr)}
-  .hook{padding:30px 22px;border-radius:22px}
-  .hook .btn{width:100%}
   .cmp{padding:6px 16px 12px}
   .qa button{padding:18px 20px;font-size:.97rem;gap:14px}.qa .body p{padding:0 20px 22px}
   .contact{padding-block:80px}
@@ -601,11 +573,11 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
 @media(max-width:380px){
   h1{font-size:1.95rem}
   .kpis{gap:8px}.kpi{padding:10px}.kpi strong{font-size:1.25rem}
-  .step{padding-left:76px}.steps::before{left:39px}.step-top{left:16px}
 }
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Saltar al contenido</a>
 
 <!-- Iconos reutilizables -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -640,11 +612,11 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
       <span>Amarella<small>Studio CO.</small></span>
     </a>
     <nav class="menu" id="menu" aria-label="Principal">
-      <a href="#por-que">Solución</a>
       <a href="#servicios">Funcionalidades</a>
-      <a href="#demo">Demo</a>
+      <a href="#demo">Demostración</a>
       <a href="#panel">Panel</a>
       <a href="#planes">Planes</a>
+      <a href="#faq">Preguntas</a>
       <span class="sep" aria-hidden="true"></span>
       <button class="lnk" type="button" data-login>Iniciar sesión</button>
       <button class="btn btn-y btn-sm" type="button" data-open-form>Prueba gratis 3 días</button>
@@ -653,22 +625,22 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
   </div>
 </header>
 
-<main>
+<main id="main">
 <!-- HERO -->
 <section class="hero dark" id="inicio">
   <div class="wrap">
     <div>
-      <span class="eyebrow rv">Plataforma para clínicas odontológicas</span>
-      <h1 class="rv" style="--d:.08s">Tu clínica, más conectada, organizada y <span class="hl">productiva.</span></h1>
-      <p class="lead rv" style="--d:.16s">Automatiza la atención por WhatsApp, administra tus servicios y gestiona tu clínica desde una plataforma tecnológica integral.</p>
+      <span class="eyebrow rv">Para clínicas odontológicas</span>
+      <h1 class="rv" style="--d:.08s">Tu asistente inteligente <span class="hl">para WhatsApp.</span></h1>
+      <p class="lead rv" style="--d:.16s">Moderniza la atención de tu clínica odontológica. Amarella ayuda a responder consultas sobre servicios, precios y horarios, y facilita la comunicación con tus pacientes.</p>
       <div class="actions rv" style="--d:.24s">
-        <button class="btn btn-y" type="button" data-open-form>Solicitar prueba gratuita <svg class="go"><use href="#i-arrow"/></svg></button>
-        <a class="btn btn-o" href="#demo">Ver cómo funciona</a>
+        <button class="btn btn-y" type="button" data-open-form>Prueba Amarella gratis durante 3 días <svg class="go"><use href="#i-arrow"/></svg></button>
+        <a class="btn btn-o" href="#demo">Conocer la demostración</a>
       </div>
-      <p class="trial-note rv" style="--d:.28s"><b>3 días gratis</b> con funciones Premium · Sin cobro anticipado</p>
+      <p class="trial-note rv" style="--d:.28s">Con funciones Premium · Sin cobro anticipado · Sin contratación automática</p>
       <div class="ticks rv" style="--d:.32s">
-        <span><i><svg><use href="#i-check"/></svg></i>Atención por WhatsApp</span>
-        <span><i><svg><use href="#i-check"/></svg></i>Panel administrativo</span>
+        <span><i><svg><use href="#i-check"/></svg></i>Responde a cualquier hora</span>
+        <span><i><svg><use href="#i-check"/></svg></i>Servicios, precios y horarios</span>
         <span><i><svg><use href="#i-check"/></svg></i>Paso a un asesor humano</span>
       </div>
     </div>
@@ -684,8 +656,9 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
           <div class="wa-top"><svg><use href="#i-back"/></svg><span class="wa-av">C</span><div><b>Clínica Dental Ejemplo</b><small>en línea · asistente activo</small></div></div>
           <div class="wa-body">
             <span class="wa-chip">Hoy</span>
-            <div class="bub c">Hola, quisiera una cita para limpieza dental. ¿Tienen horario el sábado?<time>10:02</time></div>
-            <div class="bub a">¡Hola! Con gusto. Horarios de ejemplo para el sábado:<div class="slots"><span>9:00</span><span class="on">11:30</span><span>14:00</span></div><time>10:02 <svg><use href="#i-ticks"/></svg></time></div>
+            <div class="bub c">Hola, ¿cuánto cuesta una limpieza dental y qué horario tienen?<time>10:02</time></div>
+            <div class="bub a">¡Hola! La limpieza dental tiene el precio que configuró la clínica. Atendemos de lunes a viernes, de 8:00 a 18:00.<time>10:02 <svg><use href="#i-ticks"/></svg></time></div>
+            <div class="bub c">Perfecto, gracias.<time>10:03</time></div></div>
           </div>
           <div class="wa-input"><span>Mensaje</span><i><svg><use href="#i-send"/></svg></i></div>
         </div></div>
@@ -699,122 +672,33 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
   </div>
 </section>
 
-<div class="strip">
-  <div class="wrap">
-    <span><svg><use href="#i-chat"/></svg>Atención por WhatsApp</span>
-    <span><svg><use href="#i-cal"/></svg>Gestión de citas</span>
-    <span><svg><use href="#i-users"/></svg>Seguimiento de pacientes</span>
-    <span><svg><use href="#i-dash"/></svg>Panel administrativo</span>
-    <span><svg><use href="#i-bolt"/></svg>Automatización</span>
-  </div>
-</div>
-
 <!-- PROBLEMAS -->
 <section id="problemas" class="white">
   <div class="wrap">
     <div class="sec-head center">
-      <span class="eyebrow rv">Retos de la clínica</span>
-      <h2 class="rv" style="--d:.06s">¿Tu clínica está perdiendo tiempo gestionando <span class="hl">conversaciones manualmente?</span></h2>
-      <p class="rv" style="--d:.12s">Son situaciones habituales en la atención de una clínica odontológica. Amarella está pensada para ayudarte con ellas.</p>
+      <span class="eyebrow rv">Problemas y solución</span>
+      <h2 class="rv" style="--d:.06s">Lo que pasa en recepción, <span class="hl">resuelto desde WhatsApp.</span></h2>
     </div>
-    <div class="pbx">
-      <div class="pgrid">
-        <article class="pt rv"><span class="ic"><svg><use href="#i-clock"/></svg></span><div><h3>Pacientes esperando respuestas</h3><p>Escriben fuera de horario o en plena consulta.</p></div></article>
-        <article class="pt rv" style="--d:.06s"><span class="ic"><svg><use href="#i-chat"/></svg></span><div><h3>Mensajes sin atender</h3><p>Las conversaciones se acumulan y algunas se quedan sin contestar.</p></div></article>
-        <article class="pt rv" style="--d:.12s"><span class="ic"><svg><use href="#i-cal"/></svg></span><div><h3>Citas difíciles de organizar</h3><p>Coordinar horarios consume tiempo de recepción.</p></div></article>
-        <article class="pt rv" style="--d:.18s"><span class="ic"><svg><use href="#i-users"/></svg></span><div><h3>Seguimientos pendientes</h3><p>Un contacto nuevo se enfría si nadie le da continuidad.</p></div></article>
-        <article class="pt rv" style="--d:.24s"><span class="ic"><svg><use href="#i-doc"/></svg></span><div><h3>Información dispersa</h3><p>Servicios, precios y horarios repartidos en distintos lugares.</p></div></article>
-        <article class="pt rv" style="--d:.3s"><span class="ic"><svg><use href="#i-gear"/></svg></span><div><h3>Exceso de tareas administrativas</h3><p>Tareas repetitivas que le quitan tiempo a la atención.</p></div></article>
-      </div>
-      <aside class="sol rv" style="--d:.15s">
-        <span class="eyebrow">Cómo ayuda Amarella</span>
-        <h3>Una plataforma que centraliza la atención</h3>
-        <p>Cada reto tiene su respuesta dentro de la misma plataforma.</p>
-        <ul>
-          <li>Respuestas por WhatsApp <span class="st st-on">Disponible</span></li>
-          <li>Información de tu clínica <span class="st st-cus">Personalizable</span></li>
-          <li>Panel y consumo de mensajes <span class="st st-on">Disponible</span></li>
-          <li>Gestión de citas <span class="st st-dev">En desarrollo</span></li>
-          <li>Seguimiento de pacientes <span class="st st-dev">En desarrollo</span></li>
-        </ul>
-        <button class="btn btn-y" type="button" data-open-form>Solicitar prueba gratuita <svg class="go"><use href="#i-arrow"/></svg></button>
-      </aside>
+    <div class="ps">
+      <div class="ps-h" aria-hidden="true"><span>En tu clínica</span><span></span><span>Con Amarella</span></div>
+      <div class="ps-r rv"><div class="ps-p"><span class="ic"><svg><use href="#i-chat"/></svg></span><div><h3>Preguntas repetidas</h3><p>Los mismos mensajes llegan una y otra vez.</p></div></div><span class="ps-a" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span><div class="ps-s"><h3>Respuestas automáticas</h3><p>El asistente contesta las consultas frecuentes por ti.</p></div></div>
+      <div class="ps-r rv" style="--d:.06s"><div class="ps-p"><span class="ic"><svg><use href="#i-clock"/></svg></span><div><h3>Recepción ocupada</h3><p>El equipo atiende en persona y los mensajes esperan.</p></div></div><span class="ps-a" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span><div class="ps-s"><h3>Atención a cualquier hora</h3><p>Responde de inmediato y pasa a un asesor lo que lo necesita.</p></div></div>
+      <div class="ps-r rv" style="--d:.12s"><div class="ps-p"><span class="ic"><svg><use href="#i-card"/></svg></span><div><h3>Consultas de precios y servicios</h3><p>Cada paciente pregunta cuánto cuesta y qué ofrecen.</p></div></div><span class="ps-a" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span><div class="ps-s"><h3>Información de tu clínica</h3><p>Responde con los servicios y precios que tú configuras.</p></div></div>
+      <div class="ps-r rv" style="--d:.18s"><div class="ps-p"><span class="ic"><svg><use href="#i-doc"/></svg></span><div><h3>Información desordenada</h3><p>Servicios, precios y horarios repartidos en varios lugares.</p></div></div><span class="ps-a" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span><div class="ps-s"><h3>Todo en tu panel</h3><p>Configuras tu clínica en un solo lugar y el asistente lo usa.</p></div></div>
     </div>
-  </div>
-</section>
-
-<!-- POR QUÉ AMARELLA -->
-<section id="por-que" class="white">
-  <div class="wrap">
-    <div class="sec-head center">
-      <span class="eyebrow rv">La solución Amarella</span>
-      <h2 class="rv" style="--d:.06s">No necesitas otro chatbot. <span class="hl">Necesitas una plataforma para tu clínica.</span></h2>
-      <p class="rv" style="--d:.12s">Cada forma de atender tiene su lugar. Esta es la diferencia de enfoque entre las opciones más comunes y Amarella.</p>
-    </div>
-    <div class="why">
-      <div class="why-l">
-      <article class="wc rv"><span class="wk">Enfoque</span><h3>Atención manual por WhatsApp</h3><p>Tu equipo responde cada mensaje de forma personal.</p><div class="wn"><b>A tener en cuenta</b>La respuesta depende del horario y de la disponibilidad de recepción.</div></article>
-      <article class="wc rv" style="--d:.06s"><span class="wk">Enfoque</span><h3>Chatbot tradicional</h3><p>Responde con flujos o menús predefinidos, útil para preguntas simples.</p><div class="wn"><b>A tener en cuenta</b>Se centra en la conversación; la gestión de la clínica queda en otras herramientas.</div></article>
-      <article class="wc rv" style="--d:.12s"><span class="wk">Enfoque</span><h3>CRM genérico</h3><p>Organiza contactos y procesos comerciales de cualquier sector.</p><div class="wn"><b>A tener en cuenta</b>Necesita adaptarse al funcionamiento de una clínica odontológica.</div></article>
-      </div>
-      <article class="wc am rv" style="--d:.18s"><span class="wk">Amarella Studio CO.</span><h3>Plataforma para clínicas</h3><p>Atención inteligente y gestión de la clínica en un mismo lugar.</p>
-        <ul>
-          <li>Asistente inteligente de WhatsApp</li>
-          <li>Servicios y precios configurados por clínica</li>
-          <li>Panel administrativo</li>
-          <li>Control del consumo de mensajes</li>
-          <li>Gestión de la suscripción</li>
-          <li>Activar o pausar la IA</li>
-          <li>Transferencia a un asesor humano</li>
-          <li>Varias clínicas en una misma plataforma, con datos separados</li>
-        </ul>
-      </article>
-    </div>
-    <p class="why-note rv">Comparación de enfoques generales. No se refiere a ninguna empresa o producto concreto.</p>
   </div>
 </section>
 
 <!-- SERVICIOS -->
 <section id="servicios" class="paper">
-  <div class="wrap">
-    <div class="sec-head">
+  <div class="wrap fx">
+    <div class="fx-l">
       <span class="eyebrow rv">Funcionalidades</span>
-      <h2 class="rv" style="--d:.06s">Todo lo que tu clínica necesita, <span class="hl">en un solo lugar.</span></h2>
-      <p class="rv" style="--d:.12s">No es solo un chatbot: Amarella integra atención por WhatsApp, gestión de citas, seguimiento y un panel administrativo.</p>
+      <h2 class="rv" style="--d:.06s">Todo lo que tu recepción responde, <span class="hl">ahora también por WhatsApp.</span></h2>
+      <p class="lead rv" style="--d:.12s">Funciones disponibles hoy para atender a tus pacientes y administrar tu clínica.</p>
+      <div class="dev rv" style="--d:.18s"><span class="st st-dev">En desarrollo</span><p>Gestión de citas, seguimiento de pacientes y automatización de procesos. Todavía no están operativos.</p></div>
     </div>
-    <div class="legend rv"><span class="lg"><span class="st st-on">Disponible</span>Funciona hoy</span><span class="lg"><span class="st st-cus">Personalizable</span>Se adapta a tu clínica</span><span class="lg"><span class="st st-dev">En desarrollo</span>Aún no operativo</span><span class="lg"><span class="st st-soon">Próximamente</span>Planificado</span></div>
-    <div class="svc">
-      <article class="card c1 rv">
-        <div class="card-h"><div class="ico"><svg><use href="#i-chat"/></svg></div><div class="tags"><span class="st st-on">Disponible</span><span class="st st-cus">Personalizable</span></div></div>
-        <h3>Asistente inteligente de WhatsApp</h3>
-        <p>Atiende a tus pacientes a cualquier hora con la información que tú configuras.</p>
-        <ul><li>Atención automática</li><li>Información sobre servicios</li><li>Consulta de precios y horarios</li><li>Atención de nuevos contactos</li><li>Transferencia a un asesor humano</li></ul>
-      </article>
-      <article class="card c2 dev rv" style="--d:.08s">
-        <div class="card-h"><div class="ico"><svg><use href="#i-cal"/></svg></div><div class="tags"><span class="st st-dev">En desarrollo</span></div></div>
-        <h3>Gestión de citas</h3>
-        <p>Organiza la agenda directamente desde la conversación.</p>
-        <ul><li>Disponibilidad</li><li>Agendamiento</li><li>Confirmaciones</li><li>Cancelaciones</li><li>Recordatorios</li></ul>
-      </article>
-      <article class="card c3 dev rv" style="--d:.16s">
-        <div class="card-h"><div class="ico"><svg><use href="#i-users"/></svg></div><div class="tags"><span class="st st-dev">En desarrollo</span></div></div>
-        <h3>Seguimiento de pacientes</h3>
-        <p>Que ninguna conversación se quede a medias.</p>
-        <ul><li>Seguimiento de nuevos contactos</li><li>Continuidad de conversaciones</li><li>Recuperación de oportunidades</li><li>Atención de pacientes existentes</li></ul>
-      </article>
-      <article class="card c4 rv">
-        <div class="card-h"><div class="ico"><svg><use href="#i-dash"/></svg></div><div class="tags"><span class="st st-on">Disponible</span></div></div>
-        <h3>Panel administrativo</h3>
-        <p>Una vista clara de tu clínica, tu plan y lo que hace la inteligencia artificial.</p>
-        <ul><li>Control de la cuenta</li><li>Estado de la IA</li><li>Consumo de mensajes</li><li>Configuración de servicios</li><li>Administración de suscripciones</li><li>Estadísticas disponibles</li></ul>
-      </article>
-      <article class="card c5 dev rv" style="--d:.1s">
-        <div class="card-h"><div class="ico"><svg><use href="#i-bolt"/></svg></div><div class="tags"><span class="st st-soon">Próximamente</span></div></div>
-        <h3>Automatización empresarial</h3>
-        <p>Menos tareas manuales y una atención centralizada.</p>
-        <ul><li>Organización de procesos</li><li>Reducción de tareas manuales</li><li>Centralización de la atención</li></ul>
-      </article>
-    </div>
+    <ul class="fx-g"><li class="rv" style="--d:0.00s"><span class="ic"><svg><use href="#i-chat"/></svg></span><div><h3>Respuestas a consultas</h3><p>Contesta los mensajes de tus pacientes de forma natural.</p></div></li><li class="rv" style="--d:0.05s"><span class="ic"><svg><use href="#i-doc"/></svg></span><div><h3>Información de servicios</h3><p>Explica los tratamientos que ofrece tu clínica.</p></div></li><li class="rv" style="--d:0.10s"><span class="ic"><svg><use href="#i-card"/></svg></span><div><h3>Precios</h3><p>Responde con los precios que tú defines.</p></div></li><li class="rv" style="--d:0.15s"><span class="ic"><svg><use href="#i-clock"/></svg></span><div><h3>Horarios</h3><p>Indica cuándo atiende tu clínica.</p></div></li><li class="rv" style="--d:0.20s"><span class="ic"><svg><use href="#i-users"/></svg></span><div><h3>Atención humana</h3><p>Transfiere la conversación a un asesor de tu equipo.</p></div></li><li class="rv" style="--d:0.25s"><span class="ic"><svg><use href="#i-gear"/></svg></span><div><h3>Configuración de la clínica</h3><p>Ajusta servicios, precios, horarios y estado de la IA desde el panel.</p></div></li></ul>
   </div>
 </section>
 
@@ -833,13 +717,13 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
           <button type="button" data-sc="horarios">Horarios</button>
           <button type="button" data-sc="asesor">Hablar con un asesor</button>
         </div>
-        <div class="wa-input"><span>Elige una opción para probar</span><i><svg><use href="#i-send"/></svg></i></div>
+        <form class="wa-input wa-form" id="chatForm" autocomplete="off"><label class="sr" for="chatIn">Escribe un mensaje de prueba</label><input id="chatIn" type="text" maxlength="160" placeholder="Escribe una pregunta de prueba"><button type="submit" aria-label="Enviar mensaje de prueba"><svg><use href="#i-send"/></svg></button></form>
       </div></div>
     </div>
     <div>
       <span class="eyebrow rv">Simulación</span>
-      <h2 class="rv" style="margin:16px 0 14px;--d:.06s">Mira cómo trabajaría <span class="hl">Amarella en tu clínica.</span></h2>
-      <p class="lead rv" style="--d:.12s">Prueba la conversación: elige una opción y observa cómo responde el asistente.</p>
+      <h2 class="rv" style="margin:16px 0 14px;--d:.06s">Conoce la demostración <span class="hl">de Amarella.</span></h2>
+      <p class="lead rv" style="--d:.12s">Elige un escenario o escribe una pregunta, y observa cómo responde el asistente.</p>
       <ul class="dm-list">
         <li class="rv"><button type="button" data-sc="servicios"><span class="ic"><svg><use href="#i-chat"/></svg></span><span><b>Consulta de servicios</b><span>El asistente responde con la información de la clínica.</span></span></button></li>
         <li class="rv" style="--d:.06s"><button type="button" data-sc="precios"><span class="ic"><svg><use href="#i-card"/></svg></span><span><b>Consulta de precios</b><span>Cada clínica define sus precios desde el panel.</span></span></button></li>
@@ -993,56 +877,17 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
 </section>
 
 <!-- PROCESO -->
-<section id="proceso" class="paper">
+<section id="proceso" class="white">
   <div class="wrap">
     <div class="sec-head center">
       <span class="eyebrow rv">Implementación</span>
-      <h2 class="rv" style="--d:.06s">De tu clínica a tu asistente, <span class="hl">en tres pasos.</span></h2>
+      <h2 class="rv" style="--d:.06s">Empieza en <span class="hl">tres pasos.</span></h2>
     </div>
-    <div class="steps">
-      <div class="step rv"><div class="step-top"><div class="num">1</div><div class="ln"></div></div><div class="sico"><svg><use href="#i-plug"/></svg></div><h3>Conectamos el WhatsApp de tu clínica</h3><p>Vinculamos tu canal y registramos tu clínica con su propia cuenta y sus propios datos.</p></div>
-      <div class="step rv" style="--d:.1s"><div class="step-top"><div class="num">2</div><div class="ln"></div></div><div class="sico"><svg><use href="#i-sliders"/></svg></div><h3>Configuramos el asistente</h3><p>Cargamos tus servicios, precios y horarios, y definimos el tono con el que responde.</p></div>
-      <div class="step rv" style="--d:.2s"><div class="step-top"><div class="num">3</div></div><div class="sico"><svg><use href="#i-dash"/></svg></div><h3>Activamos tu prueba y te damos acceso</h3><p>Empiezas tus 3 días con funciones Premium y entras a tu panel para supervisarlo todo.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- CONFIANZA -->
-<section id="confianza" class="white">
-  <div class="wrap">
-    <div class="sec-head center">
-      <span class="eyebrow rv">Escenarios de uso</span>
-      <h2 class="rv" style="--d:.06s">Situaciones en las que <span class="hl">Amarella ayuda.</span></h2>
-      <p class="rv" style="--d:.12s">Ejemplos ilustrativos de cómo una clínica puede usar la plataforma. No son casos de clientes reales.</p>
-    </div>
-    <div class="sc">
-      <article class="scc rv"><span class="ex">Ejemplo ilustrativo</span><h3>Consultas fuera del horario</h3><p>Una clínica recibe mensajes por la noche. El asistente responde con los servicios y horarios que la clínica configuró.</p><div class="res"><b>Funcionalidad</b>Atención por WhatsApp</div></article>
-      <article class="scc rv" style="--d:.1s"><span class="ex">Ejemplo ilustrativo</span><h3>Recepción con varias conversaciones</h3><p>La recepción atiende a pacientes en persona. El asistente se ocupa de las preguntas frecuentes y pasa a un asesor lo que lo requiere.</p><div class="res"><b>Funcionalidad</b>Transferencia a un asesor</div></article>
-      <article class="scc rv" style="--d:.2s"><span class="ex">Ejemplo ilustrativo</span><h3>Control del plan y del consumo</h3><p>El administrador revisa en su panel cuántos mensajes ha usado y cuándo vence la suscripción.</p><div class="res"><b>Funcionalidad</b>Panel administrativo</div></article>
-    </div>
-    <p class="trust-note rv">Los testimonios de clínicas aparecerán aquí cuando existan clientes reales que los autoricen.</p>
-    <!-- ESTRUCTURA PREPARADA PARA TESTIMONIOS AUTÉNTICOS. Descomentar y completar solo con testimonios reales y autorizados:
-    <div class="sc">
-      <figure class="scc">
-        <blockquote>«Texto del testimonio autorizado.»</blockquote>
-        <figcaption>Nombre · Cargo · Clínica</figcaption>
-      </figure>
-    </div>
-    -->
-  </div>
-</section>
-
-<!-- GANCHO -->
-<section class="hook-s white" id="gancho">
-  <div class="wrap">
-    <div class="hook rv">
-      <div>
-        <span class="eyebrow">3 días gratis</span>
-        <h2>Una plataforma diseñada para que tu clínica gestione su atención de manera <span class="hl">más inteligente.</span></h2>
-        <p>Automatiza conversaciones, administra tus servicios y controla tu plataforma desde un mismo lugar.</p>
-      </div>
-      <button class="btn btn-y" type="button" data-open-form>Solicitar prueba gratuita <svg class="go"><use href="#i-arrow"/></svg></button>
-    </div>
+    <ol class="flow">
+      <li class="fl-i rv"><div class="fl-n"><span class="fl-c"><svg><use href="#i-plug"/></svg></span><span class="fl-k">1</span></div><h3>Conecta tu WhatsApp</h3><p>Vinculamos el número de WhatsApp de tu clínica.</p></li>
+      <li class="fl-i rv" style="--d:.1s"><div class="fl-n"><span class="fl-c"><svg><use href="#i-sliders"/></svg></span><span class="fl-k">2</span></div><h3>Configura tu clínica</h3><p>Cargamos tus servicios, precios y horarios.</p></li>
+      <li class="fl-i rv" style="--d:.2s"><div class="fl-n"><span class="fl-c"><svg><use href="#i-bolt"/></svg></span><span class="fl-k">3</span></div><h3>Activa Amarella</h3><p>El asistente empieza a responder y tú lo supervisas desde tu panel.</p></li>
+    </ol>
   </div>
 </section>
 
@@ -1059,7 +904,7 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
       <ol class="trial-s">
         <li><span>1</span><div><b>Días 1 a 3</b>Usas Amarella con todas las funciones Premium.</div></li>
         <li><span>2</span><div><b>Al terminar</b>Te preguntamos qué plan quieres: Standard o Premium.</div></li>
-        <li><span>3</span><div><b>Si decides contratar</b>Se cobra la instalación única de $45.000 COP con el plan que elijas.</div></li>
+        <li><span>3</span><div><b>Si decides contratar</b>Pagas la instalación única de $45.000 COP y el plan que elijas.</div></li>
       </ol>
     </div>
     <div class="plans">
@@ -1071,7 +916,7 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
         <div class="inst"><span>Instalación única</span><b>$45.000 COP</b></div>
         <div class="incl">Incluye</div>
         <ul><li><svg><use href="#i-check"/></svg>Asistente inteligente de WhatsApp</li><li><svg><use href="#i-check"/></svg>Configuración de servicios y precios</li><li><svg><use href="#i-check"/></svg>Panel administrativo</li><li><svg><use href="#i-check"/></svg>Control del consumo de mensajes</li><li><svg><use href="#i-check"/></svg>Gestión de la suscripción</li><li><svg><use href="#i-check"/></svg>Activar o pausar la IA</li></ul>
-        <p class="cond">Incluye 3 días de prueba gratuita con funciones Premium. La instalación se cobra solo si contratas al terminar la prueba.</p>
+        <p class="cond">Incluye 3 días de prueba gratuita con funciones Premium. La instalación y el plan se pagan solo si decides contratar.</p>
         <button class="btn btn-y" type="button" data-open-form data-plan="Standard">Empezar prueba · Standard <svg class="go"><use href="#i-arrow"/></svg></button>
       </article>
       <article class="plan prem rv" style="--d:.1s">
@@ -1082,7 +927,7 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
         <div class="inst"><span>Instalación única</span><b>$45.000 COP</b></div>
         <div class="incl">Incluye</div>
         <ul><li><svg><use href="#i-check"/></svg>Asistente inteligente de WhatsApp</li><li><svg><use href="#i-check"/></svg>Configuración de servicios y precios</li><li><svg><use href="#i-check"/></svg>Panel administrativo</li><li><svg><use href="#i-check"/></svg>Control del consumo de mensajes</li><li><svg><use href="#i-check"/></svg>Gestión de la suscripción</li><li><svg><use href="#i-check"/></svg>Activar o pausar la IA</li></ul>
-        <p class="cond">Incluye 3 días de prueba gratuita con funciones Premium. La instalación se cobra solo si contratas al terminar la prueba.</p>
+        <p class="cond">Incluye 3 días de prueba gratuita con funciones Premium. La instalación y el plan se pagan solo si decides contratar.</p>
         <button class="btn btn-y" type="button" data-open-form data-plan="Premium">Empezar prueba · Premium <svg class="go"><use href="#i-arrow"/></svg></button>
       </article>
     </div>
@@ -1113,16 +958,16 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
       <h2 class="rv" style="--d:.06s">Resolvemos tus <span class="hl">dudas.</span></h2>
     </div>
     <div class="faq rv" id="faqList">
-      <div class="qa open"><button type="button" aria-expanded="true"><span>¿Qué es Amarella?</span><i class="pm"></i></button><div class="body"><div><p>Es una plataforma tecnológica para clínicas odontológicas que integra atención inteligente por WhatsApp, un panel administrativo y control de consumo y suscripción. La gestión de citas, el seguimiento de pacientes y la automatización de procesos están en desarrollo.</p></div></div></div>
-      <div class="qa"><button type="button" aria-expanded="false"><span>¿Cómo funciona la prueba gratuita?</span><i class="pm"></i></button><div class="body"><div><p>Durante 3 días usas Amarella con las funciones Premium, sin cobro anticipado. Al terminar te preguntamos qué plan quieres contratar, Standard o Premium. No hay contratación automática: si no eliges un plan, no se cobra nada.</p></div></div></div>
-      <div class="qa"><button type="button" aria-expanded="false"><span>¿Cuándo se cobra la instalación?</span><i class="pm"></i></button><div class="body"><div><p>La instalación cuesta $45.000 COP y se paga una sola vez. Solo se cobra si decides contratar un plan al terminar los 3 días de prueba.</p></div></div></div>
-      <div class="qa"><button type="button" aria-expanded="false"><span>¿Cómo funciona el asistente?</span><i class="pm"></i></button><div class="body"><div><p>Recibe los mensajes de tus pacientes por WhatsApp y responde con la información que tu clínica configuró: servicios, precios y horarios. Cuando hace falta, pasa la conversación a un asesor de tu equipo.</p></div></div></div>
-      <div class="qa"><button type="button" aria-expanded="false"><span>¿Cómo conecto el WhatsApp de mi clínica?</span><i class="pm"></i></button><div class="body"><div><p>Nos encargamos de la conexión durante la implementación. Al solicitar la demostración te indicaremos qué necesitamos de tu parte.</p></div></div></div>
-      <div class="qa"><button type="button" aria-expanded="false"><span>¿Cómo se gestionan las citas?</span><i class="pm"></i></button><div class="body"><div><p>La gestión de citas (disponibilidad, agendamiento, confirmaciones, cancelaciones y recordatorios) está en desarrollo y todavía no está operativa. Hoy el asistente atiende consultas y puede pasar la conversación a un asesor para coordinarlas.</p></div></div></div>
-      <div class="qa"><button type="button" aria-expanded="false"><span>¿Qué incluye cada plan?</span><i class="pm"></i></button><div class="body"><div><p>Standard cuesta $99.000 COP al mes e incluye 800 mensajes mensuales. Premium cuesta $179.000 COP al mes e incluye 2.500 mensajes mensuales. Ambos tienen una instalación única de $45.000 COP. Los dos incluyen el asistente de WhatsApp, la configuración de servicios y precios, el panel administrativo, el control del consumo, la gestión de la suscripción y el control del estado de la IA.</p></div></div></div>
-      <div class="qa"><button type="button" aria-expanded="false"><span>¿Cómo funciona el consumo mensual?</span><i class="pm"></i></button><div class="body"><div><p>Cada plan incluye un número de mensajes al mes: 800 en Standard y 2.500 en Premium. En tu panel ves los mensajes consumidos y los disponibles, y recibes avisos cuando el plan está por vencer o el límite se acerca.</p></div></div></div>
-      <div class="qa"><button type="button" aria-expanded="false"><span>¿Cómo administro mi cuenta?</span><i class="pm"></i></button><div class="body"><div><p>Desde tu panel puedes ver el estado de la IA, activar o desactivar el asistente, revisar el consumo, consultar tu plan y editar los servicios, precios y horarios de tu clínica. Cada clínica ve únicamente su información.</p></div></div></div>
-      <div class="qa"><button type="button" aria-expanded="false"><span>¿Qué soporte recibe mi clínica?</span><i class="pm"></i></button><div class="body"><div><p>Te acompañamos en la implementación y en el uso del panel. Los canales y horarios de soporte se confirmarán al contratar.</p></div></div></div>
+      <div class="qa open"><button type="button" aria-expanded="true"><span>¿Qué es Amarella?</span><i class="pm" aria-hidden="true"></i></button><div class="body"><div><p>Es un asistente inteligente para el WhatsApp de clínicas odontológicas. Responde consultas sobre servicios, precios y horarios, y te da un panel para administrar tu clínica.</p></div></div></div>
+      <div class="qa"><button type="button" aria-expanded="false"><span>¿Cómo funciona?</span><i class="pm" aria-hidden="true"></i></button><div class="body"><div><p>El asistente recibe los mensajes de tus pacientes y responde con la información que tu clínica configuró. Tú supervisas todo desde tu panel.</p></div></div></div>
+      <div class="qa"><button type="button" aria-expanded="false"><span>¿Cómo se conecta mi WhatsApp?</span><i class="pm" aria-hidden="true"></i></button><div class="body"><div><p>Nos encargamos de la conexión durante la implementación. Al solicitar tu prueba te indicamos qué necesitamos de tu parte.</p></div></div></div>
+      <div class="qa"><button type="button" aria-expanded="false"><span>¿Puedo configurar mis servicios y precios?</span><i class="pm" aria-hidden="true"></i></button><div class="body"><div><p>Sí. Desde tu panel defines los servicios, precios y horarios de tu clínica, y el asistente responde con esa información.</p></div></div></div>
+      <div class="qa"><button type="button" aria-expanded="false"><span>¿Puede atender una persona de mi equipo?</span><i class="pm" aria-hidden="true"></i></button><div class="body"><div><p>Sí. Cuando un paciente lo pide o el caso lo requiere, la conversación se transfiere a un asesor de tu clínica. También puedes pausar la IA desde el panel.</p></div></div></div>
+      <div class="qa"><button type="button" aria-expanded="false"><span>¿Cómo funciona la prueba gratuita?</span><i class="pm" aria-hidden="true"></i></button><div class="body"><div><p>Durante 3 días usas Amarella con las funciones Premium, sin cobro anticipado. Al terminar, eliges Standard o Premium. No hay contratación automática: si no eliges un plan, no se cobra nada.</p></div></div></div>
+      <div class="qa"><button type="button" aria-expanded="false"><span>¿Cuánto cuesta la instalación?</span><i class="pm" aria-hidden="true"></i></button><div class="body"><div><p>La instalación cuesta $45.000 COP y se paga una sola vez, solo si decides contratar un plan al terminar la prueba.</p></div></div></div>
+      <div class="qa"><button type="button" aria-expanded="false"><span>¿Qué incluye cada plan?</span><i class="pm" aria-hidden="true"></i></button><div class="body"><div><p>Standard cuesta $99.000 COP al mes con 800 mensajes mensuales. Premium cuesta $179.000 COP al mes con 2.500 mensajes mensuales. Los dos incluyen las mismas funciones; cambian el precio y los mensajes.</p></div></div></div>
+      <div class="qa"><button type="button" aria-expanded="false"><span>¿Qué pasa con el límite de mensajes?</span><i class="pm" aria-hidden="true"></i></button><div class="body"><div><p>Cada plan incluye un número de mensajes al mes: 800 en Standard y 2.500 en Premium. En tu panel ves los mensajes consumidos y los disponibles.</p></div></div></div>
+      <div class="qa"><button type="button" aria-expanded="false"><span>¿Puedo cancelar?</span><i class="pm" aria-hidden="true"></i></button><div class="body"><div><p>Durante la prueba no hay compromiso: si no eliges un plan al terminar, no se cobra nada. Las condiciones de cancelación de un plan contratado te las explicamos antes de contratar.</p></div></div></div>
     </div>
   </div>
 </section>
@@ -1130,14 +975,18 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
 <!-- CONTACTO -->
 <section class="contact dark" id="contacto">
   <div class="wrap">
-    <span class="eyebrow">Prueba gratuita</span>
-    <h2>Prueba Amarella en tu clínica <span class="hl">3 días gratis.</span></h2>
-    <p>Con funciones Premium, sin cobro anticipado y sin contratación automática. Al terminar, eliges tu plan.</p>
-    <div class="actions">
-      <button class="btn btn-y" type="button" data-open-form>Solicitar prueba gratuita <svg class="go"><use href="#i-arrow"/></svg></button>
-      <button class="btn btn-o" type="button" data-wa>Hablar con un asesor</button>
+    <div class="close rv">
+      <div class="close-t">
+        <span class="eyebrow">Prueba gratuita de 3 días</span>
+        <h2>Es momento de transformar la atención de tu clínica.</h2>
+        <p>Pruébalo con funciones Premium, sin cobro anticipado. Al terminar, eliges tu plan.</p>
+      </div>
+      <div class="close-a">
+        <button class="btn btn-k" type="button" data-open-form>Quiero probar Amarella gratis <svg class="go"><use href="#i-arrow"/></svg></button>
+        <button class="btn btn-o" type="button" data-wa>Hablar con un asesor</button>
+        <div class="chan" id="chan"></div>
+      </div>
     </div>
-    <div class="chan" id="chan"></div>
   </div>
 </section>
 </main>
@@ -1145,7 +994,7 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
 <footer>
   <div class="wrap">
     <span>&copy; <span id="year">2026</span> Amarella Studio CO. · Plataforma para clínicas odontológicas.</span>
-    <nav aria-label="Pie"><a href="#servicios">Funcionalidades</a><a href="#planes">Planes</a><a href="#faq">Preguntas</a><button type="button" data-login>Iniciar sesión</button></nav>
+    <nav aria-label="Pie"><a href="#servicios">Funcionalidades</a><a href="#demo">Demostración</a><a href="#planes">Planes</a><a href="#faq">Preguntas</a><button type="button" data-login>Iniciar sesión</button></nav>
   </div>
 </footer>
 
@@ -1311,7 +1160,7 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
     horarios:{q:'¿Cuál es su horario de atención?',steps:[{c:'a',h:'Horario de ejemplo de esta clínica:<br>• Lunes a viernes: 8:00 a 18:00<br>• Sábados: 8:00 a 12:00<br>¿Te ayudo con algo más?'}]},
     asesor:{q:'Quiero hablar con un asesor.',steps:[{c:'a',h:'Claro, te transfiero con un asesor de la clínica.'},{chip:'Conversación transferida a un asesor'},{c:'h',h:'Hola, soy parte del equipo de la clínica. ¿En qué puedo ayudarte?'}]}
   };
-  function setBusy(v){busy=v;$$('[data-sc]').forEach(function(b){b.disabled=v})}
+  function setBusy(v){busy=v;$$('[data-sc]').forEach(function(b){b.disabled=v});var ci=d.getElementById('chatIn');if(ci)ci.disabled=v}
   function run(key){
     if(busy)return; var sc=SC[key]; if(!sc)return; setBusy(true);
     var chain=Promise.resolve();
@@ -1325,6 +1174,29 @@ dialog::backdrop{background:rgba(11,11,11,.66);backdrop-filter:blur(3px)}
   }
   function reset(){chat.innerHTML='';chip('Simulación');bub('a','¡Hola! Soy el asistente de la Clínica Dental Ejemplo. ¿En qué puedo ayudarte?',true);setBusy(false)}
   $$('[data-sc]').forEach(function(b){b.addEventListener('click',function(){run(b.getAttribute('data-sc'))})});
+  /* texto libre: se interpreta con palabras clave, sin conexión al bot real */
+  function norm(t){return t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')}
+  function match(t){t=norm(t);
+    if(/asesor|persona|humano|alguien|hablar con/.test(t))return 'asesor';
+    if(/precio|cuesta|costo|valor|cuanto|tarifa/.test(t))return 'precios';
+    if(/horario|hora|abren|cierran|atienden|dias/.test(t))return 'horarios';
+    if(/servicio|tratamiento|ofrecen|limpieza|blanqueamiento|ortodoncia|valoracion/.test(t))return 'servicios';
+    return null}
+  var chatForm=$('#chatForm'), chatIn=$('#chatIn');
+  chatForm.addEventListener('submit',function(e){
+    e.preventDefault(); var t=chatIn.value.trim(); if(!t||busy)return; chatIn.value='';
+    var k=match(t); setBusy(true);
+    var b=d.createElement('div');b.className='bub c';b.textContent=t;var tm=d.createElement('time');tm.textContent=time();b.appendChild(tm);chat.appendChild(b);chat.scrollTop=chat.scrollHeight;
+    var ty=typing();
+    wait(900).then(function(){ty.remove();
+      if(k){var st=SC[k].steps,ch=Promise.resolve();st.forEach(function(x,i){ch=ch.then(function(){
+        if(x.chip){chip(x.chip);return wait(400)}
+        if(i===0){bub(x.c,x.h,true);return wait(300)}
+        var t2=typing();return wait(800).then(function(){t2.remove();bub(x.c,x.h,true)})})});
+        ch.then(function(){setBusy(false)})}
+      else{bub('a','En esta simulación puedo responder sobre servicios, precios y horarios, o pasarte con un asesor. Prueba con una de esas preguntas.',true);setBusy(false)}
+    });
+  });
   $$('[data-reset]').forEach(function(b){b.addEventListener('click',reset)});
   reset();
 
